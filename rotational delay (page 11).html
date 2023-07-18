@@ -1,0 +1,160 @@
+ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Rotational delay</title>
+     <link rel="stylesheet" type="text/css" href="/styel 001.css">
+    
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="#" class="logo"><img src="/web images/ananta gyaan logo (2).png"width="50"height="30">ANANTA GYAAN</a>
+      <div class="navbar">
+        
+      <a href="/home 02.html">Home</a>
+      <a href="/log in page.html">Login</a>
+      <div class="dropdown">
+        <button class="dropbtn">Subject 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/web COMPUTER NETWORK/Introduction and Definition of computer network(page 1).html">COMPUTER NETWORK</a> 
+        </div>
+      </div> 
+    </div>
+        </nav>
+                  
+        </p></header>
+    
+        <div id="container">
+    
+            <main id="center" class="column">
+                <article>
+    <h2><u>Rotational delay </u></h2>
+    <p>
+        घूर्णी विलंब अपेक्षित न्यूनतम समय (मिलीसेकंड में ) है जो सीपीयू को डेटा ट्रांसफर को पूरा करने और उसी डिस्क
+        सिलेंडर पर एक नया डेटा ट्रांसफर शुरू करने में लगता है। डिफ़ॉल्ट विलंब शून्य है, क्योंकि विलंब आधारित परिकलन
+        आधुनिक ऑन-डिस्क कैश के साथ संयुक्त होने पर प्रभावी नहीं होते हैं।
+        फाइल लिखते समय, UFS आबंटन रूटीन उसी डिस्क सिलेंडर पर उसी फ़ाइल में पिछले ब्लॉक के रूप में नए ब्लॉकों को स्थापित
+        करने का प्रयास करता है। आवंटन रूटीन नए ब्लॉकों तक पहुँचने के लिए आवश्यक डिस्क रोटेशन को कम करने के लिए पटरियों
+        के भीतर नए ब्लॉकों को इष्टतम रूप से स्थापित करने का प्रयास करते हैं। फ़ाइल ब्लॉक की स्थिति के लिए ताकि वे
+        "घूर्णन रूप से अच्छी तरह से व्यवहार करें, " आवंटन रूटीन को पता होना चाहिए कि सीपीयू कितनी तेजी से सेवा
+        स्थानान्तरण कर सकता है और डिस्क को एक ब्लॉक पर छोड़ने में कितना समय लगता है। Mkfs कमांड के विकल्पों का उपयोग
+        करके, आप यह संकेत कर सकते हैं कि डिस्क कितनी तेजी से घूमती है और इसमें प्रति ट्रैक कितने डिस्क ब्लॉक (सेक्टर)
+        हैं। आवंटन रूटीन इस जानकारी का उपयोग यह पता लगाने के लिए करते हैं कि डिस्क ब्लॉक को छोड़ने के लिए कितने
+        मिलीसेकंड की आवश्यकता है। फिर अपेक्षित स्थानांतरण समय (घूर्णी विलंब) का उपयोग करते हुए, आवंटन रूटीन ब्लॉक को
+        स्थिति या स्थान दे सकता है ताकि अगला ब्लॉक डिस्क हेड के नीचे आ रहा हो जब सिस्टम ब्लॉक को पढ़ने के लिए तैयार हो ।
+    </p>
+    <p><em>In other words</em></p>
+    <p>
+        घूर्णी विलंबता क्या है?<br>
+        डिस्क को कई सर्कुलर ट्रैक्स में विभाजित किया गया है, और इन ट्रैक्स को आगे सेक्टर के रूप में जाने वाले ब्लॉक में
+        विभाजित किया गया है। डेटा तक पहुँचने के लिए, एक्ट्यूएटर आर्म रीड-राइट हेड को प्लेटर के ऊपर एक विशेष ट्रैक पर ले
+        जाता है, जबकि प्लेटर रीड-राइट हेड के तहत अनुरोधित क्षेत्र की स्थिति के लिए स्पिन करता है। प्लैटर द्वारा डेटा को
+        रीड-राइट हेड के नीचे घुमाने और स्थिति में लाने में लगने वाले समय को रोटेशनल लेटेंसी कहा जाता है ।<br>
+
+        यह विलंबता धुरी की घूर्णन गति पर निर्भर करती है और इसे मिलीसेकंड में मापा जाता है । एक डिस्क के लिए औसत घूर्णी
+        विलंबता, डिस्क को एक चक्कर लगाने में लगने वाले समय का आधा होता है।
+        <br>
+        घूर्णी विलंबता समय एक डिस्क या धुरी मोटर की घूर्णी गति पर निर्भर करता है, जिसे क्रांतियों प्रति मिनट (RPM) में
+        मापा जाता है। अधिकांश चुंबकीय मीडिया-आधारित ड्राइव के लिए, औसत घूर्णी विलंबता आमतौर पर अनुभवजन्य संबंध पर आधारित
+        होती है कि ऐसी ड्राइव के लिए मिलीसेकंड में औसत विलंबता घूर्णी अवधि का आधा है। यहाँ दो प्रकार की डिस्क रोटेशन
+        विधियाँ हैं:
+    <ol type="1">
+        <li></li> निरंतर रैखिक वेग (सीएलवी), मुख्य रूप से ऑप्टिकल स्टोरेज में उपयोग किया जाता है, सिर की स्थिति के आधार
+        पर ऑप्टिकल
+        डिस्क की घूर्णी गति भिन्न होती है, और</li>
+        <li>HDDs, मानक FDDs, कुछ ऑप्टिकल डिस्क सिस्टम और विनाइल ऑडियो रिकॉर्ड में उपयोग किए जाने वाले निरंतर कोणीय वेग
+            (CAV)
+            मीडिया को एक स्थिर गति से घुमाते हैं, भले ही सिर कहीं भी हो।</li>
+    </ol><br>
+    उदाहरण के लिए, हमने प्रत्येक ट्रैक को 4 सेक्टरों में विभाजित किया है। सिस्टम को ट्रैक 1 से एक सेक्टर को पढ़ने का
+    अनुरोध प्राप्त होता है। इस प्रकार रीड/राइट हेड ट्रैक 1 पर चला जाएगा, जो समय की तलाश करेगा। नीचे दिखाए गए आरेख
+    में रीड/राइट हेड वर्तमान में सेक्टर 3 में है।<br>
+    <center><img src="/web images/rotational-latency 01.png" alt="Deadlock Detention " width="400" height="300"
+            align="center" border="2"></center><br>
+
+    डिस्क शेड्यूलिंग में रोटेशनल लेटेंसी बनाम डिस्क एक्सेस टाइम
+    लेकिन डेटा सेक्टर 3 में नहीं हो सकता है, और डेटा ब्लॉक सेक्टर 1 में मौजूद हो सकता है। सेक्टर 3 से सेक्टर 1 तक
+    जाने के लिए पढ़ने/लिखने के लिए आवश्यक समय नीचे दिए गए आरेख में दिखाया गया घूर्णी विलंबता है ।
+    <center><img src="/web images/rotational-latency 02.png" alt="Rotational delay" width="400" height="300"
+            align="center" border="2"></center><br>
+
+    डिस्क शेड्यूलिंग में रोटेशनल लेटेंसी बनाम डिस्क एक्सेस टाइम <br>
+    <b>FORMULA</b><br><br>
+    <code>Rotational Latency = (Angle between current sector and required sector) / (Rotational frequency) <br>  
+    //And  <br>
+  
+Average Rotational Latency = (1/2) * One rotation time<br> </code>
+
+    <br> सभी प्लैटर्स का अपना रीड-राइट हेड होता है। सिर को केवल आगे और पीछे ले जाया जा सकता है। यदि हेडर आगे बढ़ रहा है,
+    तो इसका मतलब है कि हेडर अंतरतम ट्रैक की ओर बढ़ रहा है। यदि हेडर को पीछे की ओर ले जाया जाता है, तो इसका मतलब है
+    कि हेडर सबसे बाहरी ट्रैक की ओर बढ़ रहा है।
+    <ul type="circle">
+        <li>सर्वोत्तम स्थिति = जब हेडर पहले से वांछित सेक्टर में हो।</li>
+        <li>सबसे खराब स्थिति = जब हेडर वांछित सेक्टर से दूर सेक्टर पर हो, तो आपको एक पूर्ण घुमाव की प्रतीक्षा करनी होगी।</li>
+        <li>औसत मामला = घूर्णन समय का आधा।</li>
+    </ul>
+    <b>EXAMPLE</b><br><br>
+    नीचे दिए गए उदाहरण में, हमने घूर्णी विलंबता की गणना करने के लिए सूत्र का उपयोग किया,<br>
+    <code>
+        Suppose, Speed = 2400 RPM (Rotation Per Minute)  <br>
+        Then, 2400 Rotation = 1 min   <br>
+        1 Rotation = 60 sec / 2400     // 1 min = 60 sec<br>  
+        1 Rotation = 1/40 sec  <br>
+          
+        One Rotation Time = 1/40 sec  <br>
+          
+        Average Rotational Latency = (1/2) * (1/40)<br>  
+        = 1/80 sec<br> </code>
+    </p>
+</article>                              
+</main>
+
+<nav id="left" class="column">
+    <h3>Topics</h3>
+    <ul>
+        <li><a href="/Disk Scheduling Algorithm (page 13).html">Disk Scheduling Algorithm </a></li>
+        <li><a href="/Transfer time and Bandwidh(page 12).html">Transfer time and Bandwidh</a></li>
+        <li><a href="/Deadlock detection (page 9).html">Deadlock detection</a></li>
+        <li><a href="/what is Hard disk (page 10).html">what is Hard disk</a></li>
+        <li><a href="/rotational delay (page 11).html">rotational delay</a></li>
+        <li><a href="/Banker's Algorithm (page 8).html">Banker's Algorithm</a></li>
+        <li><a href="/Deadlock prevention (page 7).html">Deadlock prevention</a></li>
+        <li><a href="/layered structure approach (page 5).html">layered structure approach</a></li>
+        <li><a href="/what is kernel (page 3).html">what is kernel</a></li>
+        <li><a href="/Deadlock (page 6).html">Deadlock</a></li>
+        <li><a href="/types of kernel (page 4).html">types of kernel</a></li>
+        <li><a href="/types of operating system (page 2).html">types of operating system</a></li>
+        
+        <li><a href="/types of operating system (page 2).html">Real time operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Batch operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Distributed operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Network opertaing system</a></li>
+        <li><a href="/types of operating system (page 2).html">Single tasking & multi tasking operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Multiprocessing operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">multi-programming operating system</a></li>
+        <li><a href="/what is o.s (page 1).html">what is operating system</a></li>
+
+        
+        <li><a href=""></a></li>
+    </ul>
+
+</nav>
+
+<div id="right" class="column">
+    <h3>Ads</h3>
+    
+</div>
+
+</div>
+
+<div id="footer-wrapper">
+<footer id="footer"><p>Footer...</p></footer>
+</div>
+
+</body>
+
+</html>

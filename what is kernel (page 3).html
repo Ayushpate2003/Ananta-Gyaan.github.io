@@ -1,0 +1,193 @@
+ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>What is Kernel</title>
+     <link rel="stylesheet" type="text/css" href="/styel 001.css">
+    
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="#" class="logo"><img src="/web images/ananta gyaan logo (2).png"width="50"height="30">ANANTA GYAAN</a>
+      <div class="navbar">
+        
+      <a href="/home 02.html">Home</a>
+      <a href="/log in page.html">Login</a>
+      <div class="dropdown">
+        <button class="dropbtn">Subject 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/web COMPUTER NETWORK/Introduction and Definition of computer network(page 1).html">COMPUTER NETWORK</a> 
+        </div>
+      </div> 
+    </div>
+        </nav>
+                  
+        </p></header>
+    
+        <div id="container">
+    
+            <main id="center" class="column">
+                <article>
+    <h1><u>what is kernel</u></h1>
+    <p>Operating system हमें एक graphic interface प्रदान करता है जिससे की हम computer system को command दे सकें. लेकिन
+        system इन commands को directly समझ नहीं सकता है।
+
+        इसलिए code की translation की जाती है binary language में जिसके लिए Operating System की core component को इस्तमाल
+        में लाया जाता है, इसे ही Kernel कहते हैं।<br><br>
+        <center><img src="/web images/Kernel.png" alt="kernel" width="500" height="400" align="center"
+                border="2"><br><br></center>
+        हम User Kernel के lowest layer से deal करते हैं और वहीँ kernel फिर system के साथ deal करता है।
+
+
+        Kernel एक mediator का role निभाता है system hardware और software के बीच में . ये kernel एक operating system (OS)
+        नहीं होता है; बल्कि ये एक central module होता है operating system का. ये वो पहला program होता है जिसे की booting
+        process के दौरान protected memory area में load किया जाता है. यह उस memory में तब तक स्तिथ होता है जब तक system
+        power on हो।
+
+        ये kernel एक low-level abstraction layer होता है. User की operation एक system का इस्तमाल करती हैं system से
+        interact करने के लिए. System calls invoke करती हैं kernel को, और फिर kernel execute करता है user के operation
+        को।
+
+        Kernel इसी बिच system के दुसरे processes को manage करता है जैसे की process management, memory management, device
+        management, I/O management।
+    </p>
+    <h1><u>working of kernel</u></h1>
+    <p>जैसे की मैंने पहले भी बताया है की एक kernel Operating System का core component होता है. यह interprocess
+        communication और system calls, का इस्तमाल कर एक bridge के तरह act करता है applications और data processing के बीच
+        जिसे की performed किया जाता है hardware level में।
+
+        जब एक operating system को load किया जाता है memory में, तब kernel सबसे पहले load होता है और ये memory में तब तक
+        रहता है जब तक की operating system फिर से shut down न हो जाये. ये kernel ही responsible होता है सभी low-level
+        tasks जैसे की disk management, task management और memory management के लिए।
+
+        Overall देखा जाये तो एक computer kernel interface करता है तीन major computer hardware components, और साथ में
+        services भी प्रदान करता है application/user interface को, CPU, memory और दुसरे hardware I/O devices।
+
+        ये kernel प्रदान करने के साथ साथ manage भी करता है computer resources को, जिससे ये allow कर सके दुसरे programs
+        को run करने के लिए और इन resources का इस्तमाल कर सकें।
+
+        इसके साथ kernel applications के लिए memory address space setup करता है, files load करता है application code से
+        memory में, programs के लिए execution stack set up करता है और इसके साथ branches out करता है किसी particular
+        locations को programs के भीतर execution के लिए।
+    </p>
+    <h1><u>features of kernel</u></h1>
+    <ul type="disc">
+        <li>यह एक core component होता है Operating System का जिसके बिना OS काम नहीं कर सकता है.</li>
+        <li>हम Kernel को OS का nervous system भी कह सकते हैं.</li>
+        <li>यह central core होता है Operating System का.</li>
+        <li>यह OS के सभी चीज़ों को control करता है जिसमें I/O Management, Process Management इत्यदि शामिल हैं.</li>
+        <li>यह एक bridge का काम करता है applications और actual data processing के बीच जो की hardware level में हो रहा
+            होता है.</li>
+        <li>यह एक interface होता है user applications और hardware के बीच.</li>
+    </ul>
+    <h1><u>responsibilities of kernel</u></h1>
+    <center><img src="/web images/Kernel-responsibilities.png" alt=" kernel responsibilities " width="500"
+            height="400" align="center" border="2"><br><br></center>
+    <ol type="1">
+        <li><strong>Central Processing Unit :</strong> ये Kernel ही ये responsibility लेती है की किस समय में कितने
+            running programs को allocate किया जाये processors को।</li>
+        <li><strong> Random Access Memory:</strong> RAM का इस्तमाल दोनों program instructions और data को store करने के
+            लिए किया जाता है. वहीँ अक्सर multiple programs चाहते हैं इस memory को access करने के लिए, वहीँ ये ज्यादा
+            memory की चाह रखते हैं जो की computer में available memory से ज्यादा होती है।</li>
+        <li><strong>output Devices :</strong> ये Kernel ही allocate करती हैं requests को अलग अलग applications से जिससे
+            की सही device में I/O perform किया जा सके, साथ में ये convenient methods भी प्रदान करता है device को इस्तमाल
+            करने के लिए।ऐसे में Kernel का ये दयित्व होता है की वो allocate करे कौन सी memory कौन सी process इस्तमाल
+            करेगी, इसके साथ ये भी तय करना की आखिर क्या करें जब ज्यादा memory available न हो तब।</li>
+        <li><strong>Memory Management :</strong> ये Kernel के पास full access होता है system के memory के ऊपर और ये
+            उन्हें safely access करने के लिए allow भी करता है जब उनकी जरुरत पड़ती है तब।</li>
+        <li><strong> Management :</strong> Kernel सभी available devices की एक list maintain करनी चाहिए. यह list पहले से
+            ही configured होती है user के द्वारा या इसे detect कर लिया गया होता है operating system के द्वारा run time
+            में (normally इसे ही plug and play कहते हैं)।</li>
+
+    </ol>
+    <h1><u>Defination of kernel</u></h1>
+    OS process का function manager होता है ये kernel. ये OS के सभी primary tasks को control और manage करती है।<br>
+
+    <i>Memory Management :</i> Kernel processes को virtual और physical memory प्रदान करता है उनके execution को पूर्ण
+    करने के लिए. अगर एक process खत्म नहीं हो पा रही है physical memory में, तब kernel प्रदान करता है एक virtual space वो
+    भी hard disk में जिससे की वो operation को वहां पर store कर सके।
+    <br>
+    इसी concept को virtual mapping कहा जाता है. जब एक program को data की जरुरत होती है जो की currently present नहीं होती
+    है RAM में, तब CPU signal करता है kernel को data के लिए और फिर kernel भी respond करता है CPU को, जिसमें वो contents
+    को एक inactive memory block में write कर सके disk में (इसके लिए एक space create किया गया होता है data के requirement
+    के अनुसार) और फिर इसे replace भी किया जाता है data के द्वारा जिसे की program के द्वारा request किया जाता है. इसी
+    scheme को demand paging कहा जाता है।
+    <br>
+    <i>Scheduler :</i> ये Kernel एक scheduler के तरह act करता है processes के लिए execution के दौरान. एक समय में single
+    process को execute किया जाता है processor के द्वारा. ये kernel allocate करती है processor को list of running
+    applications में से एक program को।
+    <br>
+    <i>Device Management :</i> Kernel बाकि peripheral devices की activities को control करता है device drivers के मदद से.
+    Device drivers ऐसे program होते हैं जो की operating system को मदद करते हैं hardware devices के साथ interact करने के
+    लिए।
+    <br>
+    Device driver program एक interface प्रदान करती है और ये मदद करती है OS को दुसरे peripheral devices जैसे की printer,
+    scanner, modems, keyboard, mouse, इत्यादि से deal करने के लिए।
+    <br>
+    ये driver translate करती है operating system function calls को device-specific calls में. Device drivers detect करती
+    हैं installed devices को और साथ में search भी करती हैं device drivers को जब system start हो रहा होता है।
+    <br>
+    यह process इस्तमाल करता है system call mechanism का Operating System के Kernel के साथ deal करने के लिए. एक system
+    call ऐसा service call होता है kernel को जिससे ये permission लेता है process execution करने के लिए. एक system call
+    machine code instruction होता है जो की application program के द्वारा इस्तमाल होता है जिससे ये service permission पा
+    सके Operating system से।
+    <br>
+    <i>Memory Management: –</i> ये kernel Random Access Memory को भी manage करता है. ये allocate करता है memory दोनों
+    instruction और data को execution के लिए. ये decide करता है की कौन सी process रहे RAM में और कितनी memory की जरुरत
+    होती है एक process को implement करने के लिए? ये kernel handle करती है बहुत सारे operations को different mechanism के
+    इस्तमाल से।
+    <br>
+</article>                              
+</main>
+
+<nav id="left" class="column">
+    <h3>Topics</h3>
+    <ul>
+        <li><a href="/Disk Scheduling Algorithm (page 13).html">Disk Scheduling Algorithm </a></li>
+        <li><a href="/Transfer time and Bandwidh(page 12).html">Transfer time and Bandwidh</a></li>
+        <li><a href="/Deadlock detection (page 9).html">Deadlock detection</a></li>
+        <li><a href="/what is Hard disk (page 10).html">what is Hard disk</a></li>
+        <li><a href="/rotational delay (page 11).html">rotational delay</a></li>
+        <li><a href="/Banker's Algorithm (page 8).html">Banker's Algorithm</a></li>
+        <li><a href="/Deadlock prevention (page 7).html">Deadlock prevention</a></li>
+        <li><a href="/layered structure approach (page 5).html">layered structure approach</a></li>
+        <li><a href="/what is kernel (page 3).html">what is kernel</a></li>
+        <li><a href="/Deadlock (page 6).html">Deadlock</a></li>
+        <li><a href="/types of kernel (page 4).html">types of kernel</a></li>
+        <li><a href="/types of operating system (page 2).html">types of operating system</a></li>
+        
+        <li><a href="/types of operating system (page 2).html">Real time operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Batch operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Distributed operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Network opertaing system</a></li>
+        <li><a href="/types of operating system (page 2).html">Single tasking & multi tasking operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Multiprocessing operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">multi-programming operating system</a></li>
+        <li><a href="/what is o.s (page 1).html">what is operating system</a></li>
+
+        
+        <li><a href=""></a></li>
+    </ul>
+
+</nav>
+
+<div id="right" class="column">
+    <h3>Ads</h3>
+    
+</div>
+
+</div>
+
+<div id="footer-wrapper">
+<footer id="footer"><p>Footer...</p></footer>
+</div>
+
+</body>
+
+</html>
+</body>
+</html>

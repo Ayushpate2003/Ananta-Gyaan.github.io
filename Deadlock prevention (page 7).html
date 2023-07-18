@@ -1,0 +1,174 @@
+ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Deadlock prevention</title>
+     <link rel="stylesheet" type="text/css" href="/styel 001.css">
+    
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="#" class="logo"><img src="/web images/ananta gyaan logo (2).png"width="50"height="30">ANANTA GYAAN</a>
+      <div class="navbar">
+        
+      <a href="/home 02.html">Home</a>
+      <a href="/log in page.html">Login</a>
+      <div class="dropdown">
+        <button class="dropbtn">Subject 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/web COMPUTER NETWORK/Introduction and Definition of computer network(page 1).html">COMPUTER NETWORK</a> 
+        </div>
+      </div> 
+    </div>
+        </nav>
+                  
+        </p></header>
+    
+        <div id="container">
+    
+            <main id="center" class="column">
+                <article>
+    <h1><u>Deadlock prevention </u></h1>
+    <p> deadlock होने की जो conditions होती है उनको हम कुछ हद तक prevent कर सकते है. ज्यादातर हम उनको prevent नहीं कर
+        सकते है क्योंकि हमारे resources limited होते है. कुछ रिसोर्स sharable होते है तथा कुछ non sharable होते है.
+
+        यदि हम इन 4 conditions में से किसी एक को prevent कर सकते हो तो सिस्टम में deadlock नहीं होगा.</p>
+    <ol type="i">
+        <li><strong>mutual exclusion:-</strong>अगर हम resources को share कर सकते है तो हम mutual exclusion को prevent कर
+            सकते है.<br>अगर हमारे पास non sharable resources होते है जिन्हें share नहीं किया जा सकता है तो उस स्थिति में
+            हम mutual exclusion को होने से नहीं रोक सकते.
+
+            <br><em>उदाहरण के लिए:-</em> Printer एक non sharable resource है. इस स्थिति में mutual exclusion को prevent
+            नहीं कर
+            सकते.
+            लेकिन अगर आपके पास sharable resource है तो आप उसे share करके mutual exclusion को रोक सकते है.
+            जैसे:- मैमोरी को हम share कर सकते है.
+        </li>
+        <li><strong>hold & wait:-</strong>अगर किसी process को, इसके execution से पहले ही, resource allocate कर दिया जाए
+            तो हम hold & wait कंडीशन को होने से रोक सकते है. परन्तु इसकी हानि यह है कि इससे सिस्टम की utilization कम हो
+            जाती है.<br>
+
+            <em>उदाहरण के लिए:-</em> किसी प्रोसेस को प्रिंटर की बाद में जरुरत है. और हम उसे पहले ही प्रिंटर allocate कर
+            देते है. तो
+            जब तक इसकी execution समाप्त नहीं हो जाती तब तक यह प्रिंटर block रहेगा और दूसरे प्रोसेस इसका प्रयोग इसके खाली
+            समय में नहीं कर सकते.
+
+            तथा इसकी दूसरी हानि यह है कि इसमें starvation होता है.
+        </li>
+        <li><strong>no preemption:-</strong>अगर किसी प्रोसेस ने resources को hold किया है और वह दूसरे resources का wait
+            कर रहा है तो उस प्रोसेस से सभी resources को release कर दिया जाता है जिससे दूसरे प्रोसेस अपने execution को
+            पूरा कर सकें.
+
+            लेकिन कुछ resources जैसे:- printer, tape drivers को preempt नहीं किया जा सकता है.</li>
+        <li><strong>circular wait:-</strong> circular wait को रोकने के लिए, processes को resources केवल बढ़ते हुए क्रम
+            में ही allocate कर सकते है.
+
+            अर्थात् resources का एक क्रम होता है जिसके अनुसार ही processes को resources allocate किया जाता है.
+
+            <em>उदाहरण के लिए:-</em> यदि प्रोसेस P2 को R6 रिसोर्स allocate किया गया है तो अगली बार P2 को R5, R4 या इससे
+            नीचे के रिसोर्स allocate नहीं किये जायेंगे. केवल R6 से उपर के रिसोर्स ही P2 को allocate किये जायेंगे.
+
+            परन्तु इसकी हानि यह है कि इससे रिसोर्स utilization बहुत ही कम हो जाता है.
+        </li>
+    </ol>
+    <h2><u>Effect of Deadlock prevention </u></h2>
+    <p>deadlock prevention से होने वाले प्रभाव निम्नलिखित है:-</p>
+    <ul>
+        <li>इससे डिवाइस की utilization बहुत कम हो जाती है.</li>
+        <li>इससे सिस्टम की प्रभाव क्षमता (throughput) बहुत कम हो जाता है.</li>
+    </ul>
+    <h2><u>Deadlock Avoidance </u></h2>
+    <p>
+        जैसा कि हम पढ़ चुके है कि deadlock prevention की algorithms अच्छी नहीं है जिससे resource utilization तथा system
+        throughput कम हो जाता है. लेकिन हम डेडलॉक को avoid कर सकते है.
+
+        deadlock avoidance अल्गोरिथम यह सुनिश्चित करती है कि processes कभी भी unsafe state में नहीं जाएगी.<br>
+
+        इसमें दो states होती है:-</p>
+    <li>Safe state</li>
+    <li>Unsafe state</li>
+    <p><strong>safe state:-</strong>safe state वह state होती है जिसमें हम processes को एक safe sequence में execute करते
+        है.
+
+        इसमें प्रोसेस safe sequence में इस प्रकार exist होती है कि पहली प्रोसेस के पास execute होने के लिए पर्याप्त
+        resources हों. और जब execution समाप्त हो जाएँ तो इस प्रोसेस के resources release होने के बाद अगली प्रोसेस के
+        execution के लिए भी पर्याप्त resources हों.
+
+        <br> <strong>unsafe state:-</strong>अगर processes एक safe sequence में नहीं है तो वह unsafe state में होती है और
+        unsafe state में डेडलॉक हो सकता है.
+    </p>
+    <p>उदाहरण के लिए माना हमारे पास 11 tape drivers है.</p><br>
+    <center><img src="/web images/deadlock-avoidance..jpeg" alt="deadlock-avoidance" width="800" height="200"
+            align="center" border="2"></center><br><br>
+    <p>हमारी जो tape drivers की current hold है- 5+2+2=9
+
+        <br>हमारे पास बची हुई हुए tape drivers है: 11-9=2.
+
+        <br>सबसे पहले हम P0 को देखते है तो हम P0 को पहले execute नहीं कर सकते है क्योंकि उसे 4 और tape drivers की जरुरत
+        है परन्तु हमारे पास 2 ही है.
+
+        <br>अब P1 को देखते है. P1 को 2 की जरुरत है तो हम इसे execute कर लेते है. अब इसके execution के पूरा होने के बाद
+        यह 4 tape drivers को release करेगा.
+
+        <br>अब हम P0 को execute करेंगे क्योंकि इसे 4 tape drivers की जरुरत है तो इसके execution के बाद यह 9 tape drivers
+        को release करेगा.
+
+        <br>और फिर हम P2 को execute करेंगे, P2 को 6 की जरूरत है और हमारे पास 9 tape drivers है तो P2 भी execute हो
+        जायेगा.
+
+        तो हमारी safe sequence होगी:-<br>
+
+        P1, P0, P2
+    </p>
+</article>                              
+</main>
+
+<nav id="left" class="column">
+    <h3>Topics</h3>
+    <ul>
+        <li><a href="/Disk Scheduling Algorithm (page 13).html">Disk Scheduling Algorithm </a></li>
+        <li><a href="/Transfer time and Bandwidh(page 12).html">Transfer time and Bandwidh</a></li>
+        <li><a href="/Deadlock detection (page 9).html">Deadlock detection</a></li>
+        <li><a href="/what is Hard disk (page 10).html">what is Hard disk</a></li>
+        <li><a href="/rotational delay (page 11).html">rotational delay</a></li>
+        <li><a href="/Banker's Algorithm (page 8).html">Banker's Algorithm</a></li>
+        <li><a href="/Deadlock prevention (page 7).html">Deadlock prevention</a></li>
+        <li><a href="/layered structure approach (page 5).html">layered structure approach</a></li>
+        <li><a href="/what is kernel (page 3).html">what is kernel</a></li>
+        <li><a href="/Deadlock (page 6).html">Deadlock</a></li>
+        <li><a href="/types of kernel (page 4).html">types of kernel</a></li>
+        <li><a href="/types of operating system (page 2).html">types of operating system</a></li>
+        
+        <li><a href="/types of operating system (page 2).html">Real time operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Batch operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Distributed operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Network opertaing system</a></li>
+        <li><a href="/types of operating system (page 2).html">Single tasking & multi tasking operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Multiprocessing operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">multi-programming operating system</a></li>
+        <li><a href="/what is o.s (page 1).html">what is operating system</a></li>
+
+        
+        <li><a href=""></a></li>
+    </ul>
+
+</nav>
+
+<div id="right" class="column">
+    <h3>Ads</h3>
+    
+</div>
+
+</div>
+
+<div id="footer-wrapper">
+<footer id="footer"><p>Footer...</p></footer>
+</div>
+
+</body>
+
+</html>

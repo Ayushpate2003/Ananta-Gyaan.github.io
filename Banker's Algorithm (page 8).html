@@ -1,0 +1,206 @@
+ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Banker's Algorithm</title>
+     <link rel="stylesheet" type="text/css" href="/styel 001.css">
+    
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="#" class="logo"><img src="/web images/ananta gyaan logo (2).png"width="50"height="30">ANANTA GYAAN</a>
+      <div class="navbar">
+        
+      <a href="/home 02.html">Home</a>
+      <a href="/log in page.html">Login</a>
+      <div class="dropdown">
+        <button class="dropbtn">Subject 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/web COMPUTER NETWORK/Introduction and Definition of computer network(page 1).html">COMPUTER NETWORK</a> 
+        </div>
+      </div> 
+    </div>
+        </nav>
+                  
+        </p></header>
+    
+        <div id="container">
+    
+            <main id="center" class="column">
+                <article>
+
+
+    <h2><u>Banker’s algorithm </u></h2>
+    <p>
+        Banker’s algorithm को <i>Edger Dijkstra </i>ने विकसित किया था. इसको कभी कभी <i>detection algorithm</i> भी कहते
+        है.
+
+        <br> Banker’s algorithm एक resource allocation तथा deadlock avoidance अल्गोरिथम है.
+
+        <br> बैंकर अल्गोरिथ्म का ज्यादतर प्रयोग banking system में deadlock को avoid करने के लिए किया जाता है.
+        इसका नाम banker’s algorithm इसलिए पड़ा क्योंकि इसका प्रयोग बैंकिंग सिस्टम में किया जाता है. यह हमें यह बताता है
+        कि किसी व्यक्ति को loan दिया जा सकता है या नहीं.
+
+
+        <br>इसमें पहले से निर्धारित अधिकतम संभावित resources के allocation की safety को टेस्ट किया जाता है. तथा इसके बाद
+        यह resource allocation state को बनाता है, जिससे वह यह निर्णय लेता है कि allocation किया जा सकता है या नही.
+
+        <br> resource allocation state जो है वह resources की उपलब्ध संख्या तथा allocated resources और processes की जरुरत
+        के आधार पर निर्धारित होता है.
+
+        <br> जब process किसी उपलब्ध resource के लिए request करता है तब सिस्टम निर्णय लेता है इस resources के allocation
+        से सिस्टम safe state में रहेगा या नहीं.
+    </p>
+    <h3><u>Advantage of Banker’s Algorithm </u></h3>
+    <p>
+    <ol type="1">
+        <li>यह mutual-exclusion, hold-and-wait, और no preemption conditions को allow करता है.</li>
+        <li>यह बहुत सारें resources को contain किये रहता है जिससे सभी process की जरूरत पूरी होती है.</li>
+        <li>इस algorithm के पास max resource attribute होता है जो यह प्रस्तुत करता है कि एक process अधिकतम कितने
+            resources को hold कर सकती है.</li>
+    </ol>
+    <h3><u>Disadvantage of Banker’s Algorithm </u></h3>
+    <ol type="1">
+        <li>यह केवल fix संख्या के process और resource के साथ काम करता है।</li>
+        <li>इसमें resource को allocate किये जाने वाली time limit 1 साल है.</li>
+        </p>
+    </ol>
+    <h4>Following are the important data structures terms applied in the banker's algorithm as follows</h4>
+    <p>मान लीजिये कि ‘n’ सिस्टम में प्रोसेस की संख्या है और ‘m’ रिसोर्स के प्रकार की संख्या है।</p>
+    <big>अवेलेबल: </big><br>
+    <li>आकार का एक 1-d ऐरे है जो हर टाइप के रिसोर्सेज की संख्या बताता है।</li>
+    <li>Available[ j ] =k का अर्थ हुआ कि यहाँ पर रिसोर्स टाइप Rj के ‘k’ इंस्टैंस हैं।</li>
+    <big>मैक्स: </big><br>
+    <li>ये एक 2-d ऐरे है जिसका आकार ‘n*m’ है और ये सिस्टम के हर एक प्रोसेस के अधिकतम मांग को दिखाता है।</li>
+    <li>Max[ i, j ] = k का अर्थ हुआ कि प्रोसेस Pi Rj रिसोर्स टाइप के ‘k’ इंस्टैंस का निवेदन कर सकता है।</li>
+    <big>एलोकेशन: </big><br>
+    <li>It is a 2-d array of size that defines the number of resources of each type currently allocated to each process.
+        ये ‘n*m’ आकार का एक 2-d ऐरे है जो हर प्रोसेस को अभी allocate हुए हर एक टाइप के रिसोर्सेज की संख्या बताता है।
+    </li>
+    <li>Allocation[ i, j ] = k का अर्थ हुआ कि प्रोसेस Pi रिसोर्स टाइप Rj के अभी ‘k’ इंस्टैंस को allocate किया गया है।
+    </li>
+    <big>नीड:</big><br>
+    <p>ये ‘n*m’ आकार का एक 2-d ऐरे है जो प्रत्येक प्रोसेस के बचे हुए रिसोर्सेज की जरूरत को बताता है।<br></p>
+    <li>Need [ i, j ] = k का अर्थ हुआ कि प्रोसेस Pi अभी allocate किया हुआ है रिसोर्स टाइप Rj के ‘k’इंस्टैंस को।</li>
+    <li>Need [ i, j ] = Max [ i, j ] – Allocation [ i, j ]</li>
+    <p>specifies the resources currently allocated to process specifies the additional resources that process may still
+        request to complete its task.<br>
+
+        Allocationi ये बताता है कि अभी प्रोसेस Pi और Needi को कौन सा प्रोसेस allocate किया गया है और साथ ही वो अतिरिक्त
+        रिसोर्स जो प्रोसेस Pi निवेदन कर सकता है ताकि टास्क पूरा हो जाये।<br>
+
+        बैंकर अल्गोरिथम दो अल्गोरिथम से मिल कर बना होता है- सेफ्टी अल्गोरिथम और रिसोर्स रिक्वेस्ट अल्गोरिथम।</p>
+    <p>Example: Consider a system that contains five processes P1, P2, P3, P4, P5 and the three resource types A, B and
+        C. Following are the resources types: A has 10, B has 5 and the resource type C has 7 instances.</p>
+    <center><img src="/web images/banker algorithm 02.jpg" alt="banker algorithm " width="600" height="200"
+            align="center" border="2"></center><br><br>
+    <p>Q.इसकी need matrix क्या है?<br>
+        Q.अगर यह safe state में है तो इसकी safety sequence क्या है?<br>
+        <strong>Answer:-</strong><br>
+        need matrix का फार्मूला है:-
+        <mark> matrix = max – allocated</mark>
+        <center>NEED MATRIX</center>
+<center>        <img src="/web images/banker algorithm ex1.jpg" alt="banker algorithm ex " width="300" height="200"
+    align="center" border="2"></center><br>
+        <center><img src="/web images/banker algorithm ex2.jpg" alt="banker algorithm ex " width="300" height="200"
+            align="center" border="2"><br></center>
+        यदि need जो है वह available से छोटी या बराबर है तो प्रोसेस execute होगा और नया available बनेगा. नहीं तो आगे की
+        प्रोसेस को देखेंगे.<br>
+
+        <strong> पद 1:-</strong>
+
+        <br> प्रोसेस P0 के लिए<br>
+        need = (7,4,3)
+        if need <= available if (7,4,3) <=(3,3,2) यह execute नहीं होगा.<br> <strong>पद 2:-</strong>
+
+        <br> प्रोसेस P1 के लिए<br>
+
+            need = (1,2,2)<br>
+
+            if need <= available if (1,2,2,) <=(3,2,2) P1 execute होगा. new available=available + allocation=(3,3,2) +
+                (2,0,0)=(5,3,2) <br><strong>पद 3:-</strong>
+
+                <br> प्रोसेस P2 के लिए
+
+                <br>need = (6,0,0)<br>
+                if (6,0,0) <= (5,3,2) P2 execute नहीं होगा.<br> <strong>पद 4:-</strong>
+
+                <br>  प्रोसेस P3 के लिए<br>
+                    need = (0,1,1)<br>
+                    if need <= available (0,1,1) <=(5,3,2) P3 को execute करेंगे. new available=available +
+                        allocation=(5,3,2) + (2,1,1)=(7,4,3) <br><strong>पद 5:-</strong>
+
+                        <br> प्रोसेस P4 के लिए<br>
+
+                        need = (4,3,1)<br>
+                        if need <= available (4,3,1) <=(7, 4, 3) P4 को execute करेंगे. new available=available +
+                            allocation=(7,4,3) + (0,0,2)=(7,4,5) <br><strong>पद 6:-</strong>
+                            <br> P0 पहले execute नहीं हुआ था तो उसे देखते है-
+
+                            P0 के लिए
+
+                            need = (7,4,3)<br>
+                            if (7,4,3) <= (7,4,5) P0 को execute करेंगे. new available=available + allocation=(7,4,5) +
+                                (0,1,0)=(7,5,5) <br><strong>पद 7:-</strong>
+                                P2 भी execute नहीं हुआ था उसे देखते है.<br>
+
+                                प्रोसेस P2 के लिए<br>
+
+                                need = (6,0,0)<br>
+                                if need <= available (6,0,0) <=(7,5,5) P2 execute होगा. new available=available +
+                                    allocation=(7,5,5) + (3,0,2)=(7,5,5) + (3,0,2)=(10,5,7) तो हमने अब सभी प्रोसेस को
+                                    execute कर लिया तो अब हमारा safe sequence होगा- safe sequence:- (P1, P3, P4, P0, P2)
+                                    </p>
+
+</article>                              
+</main>
+
+<nav id="left" class="column">
+    <h3>Topics</h3>
+    <ul>
+        <li><a href="/Disk Scheduling Algorithm (page 13).html">Disk Scheduling Algorithm </a></li>
+        <li><a href="/Transfer time and Bandwidh(page 12).html">Transfer time and Bandwidh</a></li>
+        <li><a href="/Deadlock detection (page 9).html">Deadlock detection</a></li>
+        <li><a href="/what is Hard disk (page 10).html">what is Hard disk</a></li>
+        <li><a href="/rotational delay (page 11).html">rotational delay</a></li>
+        <li><a href="/Banker's Algorithm (page 8).html">Banker's Algorithm</a></li>
+        <li><a href="/Deadlock prevention (page 7).html">Deadlock prevention</a></li>
+        <li><a href="/layered structure approach (page 5).html">layered structure approach</a></li>
+        <li><a href="/what is kernel (page 3).html">what is kernel</a></li>
+        <li><a href="/Deadlock (page 6).html">Deadlock</a></li>
+        <li><a href="/types of kernel (page 4).html">types of kernel</a></li>
+        <li><a href="/types of operating system (page 2).html">types of operating system</a></li>
+        
+        <li><a href="/types of operating system (page 2).html">Real time operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Batch operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Distributed operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Network opertaing system</a></li>
+        <li><a href="/types of operating system (page 2).html">Single tasking & multi tasking operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">Multiprocessing operating system</a></li>
+        <li><a href="/types of operating system (page 2).html">multi-programming operating system</a></li>
+        <li><a href="/what is o.s (page 1).html">what is operating system</a></li>
+
+        
+        <li><a href=""></a></li>
+    </ul>
+
+</nav>
+
+<div id="right" class="column">
+    <h3>Ads</h3>
+    
+</div>
+
+</div>
+
+<div id="footer-wrapper">
+<footer id="footer"><p>Footer...</p></footer>
+</div>
+
+</body>
+
+</html>
