@@ -204,7 +204,7 @@ body {
   flex-wrap: wrap; /* Added flex-wrap for responsiveness */
   justify-content: space-between;
   align-items: center;
-  background-color: #302f49;
+  background-color: #5edaf0;
   padding: 4% 2%; /* Use percentages for padding */
 }
 
@@ -237,6 +237,6 @@ body {
 
 .bottom-links .links a {
   text-decoration: none;
-  color: #a1a1a1;
+  color: #77ccf3;
   padding: 1% 2%; /* Adjusted padding for responsiveness */
 }
