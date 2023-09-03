@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
   margin: 0;
   box-sizing: border-box;
@@ -5,79 +6,79 @@ body {
 
 /* Header Styles */
 .header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: #333;
-	padding: 20px;
-  }
-  
-  .header .logo {
-	font-size: 35px;
-	font-family: "Algerian", cursive;
-	color: #ffff;
-	text-decoration: none;
-	margin-left: 0px;
-  }
-  
-  .navbar {
-	overflow: hidden;
-	background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 2% 5%; /* Use percentages for padding */
+}
+
+.header .logo {
+  font-size: 2.5vw; /* Use viewport width for font size */
+  font-family: "Algerian", cursive;
+  color: #ffff;
+  text-decoration: none;
+  margin-left: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
 }
 
 .navbar a {
-	float: left;
-	font-size: 16px;
-	color: white;
-	text-align: center;
-	padding: 17px;
-	text-decoration: none;
+  float: left;
+  font-size: 1.5vw; /* Use viewport width for font size */
+  color: white;
+  text-align: center;
+  padding: 2% 3%; /* Use percentages for padding */
+  text-decoration: none;
 }
 
 .dropdown {
-	float: left;
-	overflow: hidden;
+  float: left;
+  overflow: hidden;
 }
 
 .dropdown .dropbtn {
-	font-size: 16px;  
-	border: none;
-	outline: none;
-	color: white;
-	padding: 14px 16px;
-	background-color: inherit;
-	font-family: inherit;
-	margin: 0;
+  font-size: 1.5vw; /* Use viewport width for font size */
+  border: none;
+  outline: none;
+  color: white;
+  padding: 2% 3%; /* Use percentages for padding */
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-	background-color: #a9d5e2;
+  background-color: #a9d5e2;
 }
 
 .dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	min-width: 200px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100%; /* Adjust min-width for full width */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .dropdown-content a {
-	float: none;
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
+  float: none;
+  color: black;
+  padding: 2% 4%; /* Use percentages for padding */
+  text-decoration: none;
+  display: block;
+  text-align: left;
 }
 
 .dropdown-content a:hover {
-	background-color: #ddd;
+  background-color: #ddd;
 }
 
 .dropdown:hover .dropdown-content {
-	display: block;
+  display: block;
 }
 
 /* Main Element Styles */
@@ -87,17 +88,17 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 520px;
+  min-height: 40vh; /* Use viewport height for min-height */
   background-color: #a9d5e2;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 20px;
+  padding: 2% 5%; /* Use percentages for padding */
 }
 
 .intro h1 {
   font-family: Forte;
-  font-size: 60px;
+  font-size: 4vw; /* Use viewport width for font size */
   color: #fff;
   font-weight: bold;
   text-transform: uppercase;
@@ -105,19 +106,19 @@ body {
 }
 
 .intro p {
-  font-size: 20px;
+  font-size: 1.5vw; /* Use viewport width for font size */
   color: hwb(0 33% 67%);
   text-transform: uppercase;
-  margin: 20px 0;
+  margin: 2% 0;
 }
 
 .intro button {
   background-color: #5edaf0;
   color: #ffff;
-  padding: 10px 25px;
+  padding: 1.5% 3%; /* Use percentages for padding */
   border: none;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 1.5vw; /* Use viewport width for font size */
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
@@ -130,7 +131,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  padding: 40px 20px; /* Adjust padding for smaller screens */
+  padding: 4% 2%; /* Use percentages for padding */
 }
 
 .achievements .work {
@@ -138,16 +139,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 20px; /* Adjust padding for smaller screens */
+  padding: 0 2%; /* Use percentages for padding */
 }
 
 .achievements .work button {
   background-color: #5edaf0;
   color: #ffff;
-  padding: 10px 25px;
+  padding: 1.5% 3%; /* Use percentages for padding */
   border: none;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 1.5vw; /* Use viewport width for font size */
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
@@ -156,25 +157,25 @@ body {
 
 .achievements .work i {
   width: fit-content;
-  font-size: 50px;
+  font-size: 4vw; /* Use viewport width for font size */
   color: #333333;
   border-radius: 25%;
   border: 2px solid #333333;
-  padding: 12px;
+  padding: 2%;
 }
 
 .achievements .work .work-heading {
-  font-size: 20px;
+  font-size: 1.5vw; /* Use viewport width for font size */
   color: #333333;
   text-transform: uppercase;
-  margin: 10px 0;
+  margin: 2% 0;
 }
 
 .achievements .work .work-text {
-  font-size: 15px;
+  font-size: 1vw; /* Use viewport width for font size */
   color: #585858;
-  margin: 10px 0;
-  max-width: 400px; /* Adjust max-width for smaller screens */
+  margin: 2% 0;
+  max-width: 70%; /* Use percentages for max-width */
 }
 
 /* Best OS Styles */
@@ -182,64 +183,5 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px; /* Adjust padding for smaller screens */
-  border-top: 2px solid #eeeeee;
-}
-
-.best-os img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.best-os-text h2 {
-  font-size: 40px;
-  color: #333333;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.best-os-text p {
-  font-size: 15px;
-  color: #585858;
-  margin: 10px 0;
-}
-
-/* Footer Styles */
-.footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #1f94e2c5;
-  padding: 40px 20px; /* Adjust padding for smaller screens */
-}
-
-.bottom-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px 0; /* Adjust padding for smaller screens */
-}
-
-.bottom-links .links {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px; /* Adjust padding for smaller screens */
-}
-
-.bottom-links .links span {
-  font-size: 20px;
-  color:  #ffffff;
-  text-transform: uppercase;
-  margin: 5px 0;
-}
-
-.bottom-links .links a {
-  text-decoration: none;
-  color:  #ffffff;
-  padding: 10px 20px;
-}
+  padding: 4% 2%; /* Use percentages for padding */
+  border-top
