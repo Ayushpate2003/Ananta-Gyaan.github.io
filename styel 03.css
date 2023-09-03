@@ -1,192 +1,182 @@
 body {
-  min-width: 630px;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-#container {
-  padding-left: 200px;
-  padding-right: 190px;
-}
-
-  .header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: #333;
+/* CSS for header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
 }
 
 .header .logo {
-font-size: 35px;
-font-family: "Algerian", cursive;
-color: #ffff;
-text-decoration: none;
-margin-left: 20px;
-background-color: #333;
-
-}
-
-.navbar {
-overflow: hidden;
-background-color: #333;
-margin-left: 1000px;
-}
-
-.navbar a {
-float: left;
-font-size: 16px;
-color: white;
-text-align: center;
-padding: 17px;
-text-decoration: none;
-}
-
-.dropdown {
-float: left;
-overflow: hidden;
-}
-
-.dropdown .dropbtn {
-font-size: 16px;  
-border: none;
-outline: none;
-color: white;
-padding: 14px 16px;
-background-color: inherit;
-font-family: inherit;
-margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-background-color: #a9d5e2;
-margin-left: 50px;
-}
-
-.dropdown-content {
-display: none;
-position: absolute;
-background-color: #f9f9f9;
-min-width: 60px;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-z-index: 1;
-margin-left: 0px;
-}
-
-.dropdown-content a {
-float: none;
-color: black;
-padding: 12px 16px;
-text-decoration: none;
-display: block;
-text-align: left;
-}
-
-.dropdown-content a:hover {
-background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-display: block;
-}
-#container .column {
-  position: relative;
-  float: left;
-}
-
-#center {
-  padding: 10px 20px;
-  width: 100%;
-}
-
-#left {
-  width: 180px;
-  padding: 10px;
-  right: 240px;
-  margin-left: -100%;
-}
-
-#right {
-  width: 130px;
-  padding: 0 10px;
-  margin-right: -100%;
-}
-
-#footer {
-  clear: both;
-}
-
-/* IE hack */
-* html #left {
-  left: 150px;
-}
-
-/* Make the columns the same height as each other */
-#container {
-  overflow: hidden;
-}
-
-#container .column {
-  padding-bottom: 1001em;
-  margin-bottom: -1000em;
-}
-
-
-* html body {
-  overflow: hidden;
-}
-
-* html #footer-wrapper {
-  float: left;
-  position: relative;
-  width: 100%;
-  padding-bottom: 10010px;
-  margin-bottom: -10000px;
-  background: #ffffff;
-}
-
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family:Sans-serif;
-  line-height: 1.5em;
-}
-
-p {
-  color: #555;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul a {
-  color: rgb(56, 26, 228);
+  font-size: 25px;
+  font-family: "Sriracha", cursive;
+  color: #000;
   text-decoration: none;
+  margin-left: 30px;
 }
 
-#header, #footer {
-  font-size: large;
-  padding: 0.3em;
-  background: #a9d5e2;
+.nav-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f5f5f5;
+  margin-right: 20px;
 }
 
-#left {
-  background: #a9d5e2;
+.nav-items a {
+  text-decoration: none;
+  color: #000;
+  padding: 35px 20px;
 }
 
-#right {
-  background: #dcebf8;
+/* CSS for main element */
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 520px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-#center {
-  background: #fff;
+.intro h1 {
+  font-family: sans-serif;
+  font-size: 60px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
 }
 
-#container .column {
-  padding-top: 1em;
+.intro p {
+  font-size: 20px;
+  color: #d1d1d1;
+  text-transform: uppercase;
+  margin: 20px 0;
 }
-#images {
-  height: 10;
-  width: 2;
+
+.intro button {
+  background-color: #5edaf0;
+  color: #000;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4)
+}
+
+.achievements {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 80px;
+}
+
+.achievements .work {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.achievements .work i {
+  width: fit-content;
+  font-size: 50px;
+  color: #333333;
+  border-radius: 50%;
+  border: 2px solid #333333;
+  padding: 12px;
+}
+
+.achievements .work .work-heading {
+  font-size: 20px;
+  color: #333333;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.achievements .work .work-text {
+  font-size: 15px;
+  color: #585858;
+  margin: 10px 0;
+}
+
+.about-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 80px;
+  border-top: 2px solid #eeeeee;
+}
+
+.about-me img {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-me-text h2 {
+  font-size: 30px;
+  color: #333333;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.about-me-text p {
+  font-size: 15px;
+  color: #585858;
+  margin: 10px 0;
+}
+
+/* CSS for footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #302f49;
+  padding: 40px 80px;
+}
+
+.footer .copy {
+  color: #fff;
+}
+
+.bottom-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.bottom-links .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.bottom-links .links span {
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.bottom-links .links a {
+  text-decoration: none;
+  color: #a1a1a1;
+  padding: 10px 20px;
 }
