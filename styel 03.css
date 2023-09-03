@@ -87,7 +87,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
   min-height: 40vh; /* Use viewport height for min-height */
   background-color: #a9d5e2;
   background-size: cover;
