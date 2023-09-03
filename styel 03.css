@@ -86,6 +86,49 @@ background-color: #ddd;
 .dropdown:hover .dropdown-content {
 display: block;
 }
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh; /* Use viewport height for min-height */
+  background-image: url("./web images/h 01.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  padding: 2% 5%; /* Use percentages for padding */
+}
+
+.intro h1 {
+  font-family: Forte;
+  font-size: 4vw; /* Use viewport width for font size */
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.intro p {
+  font-size: 1.5vw; /* Use viewport width for font size */
+  color: hwb(0 33% 67%);
+  text-transform: uppercase;
+  margin: 2% 0;
+}
+
+.intro button {
+  background-color: #5edaf0;
+  color: #ffff;
+  padding: 1.5% 3%; /* Use percentages for padding */
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5vw; /* Use viewport width for font size */
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+}
 #container .column {
   position: relative;
   float: left;
