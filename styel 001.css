@@ -25,27 +25,26 @@ body {
   }
   
   .navbar {
-	display: flex;
-	justify-content: flex-end; /* Adjust alignment for responsive design */
+	overflow: hidden;
 	background-color: #333;
-	flex-grow: 1; /* Allow the navbar to grow to fill available space */
-	padding: 0; /* Reset padding for the navbar */
-  }
-  
-  .navbar a {
+}
+
+.navbar a {
+	float: left;
 	font-size: 16px;
 	color: white;
 	text-align: center;
 	padding: 17px;
 	text-decoration: none;
-  }
-  
-  .dropdown {
-	position: relative; /* Make dropdown position relative */
-  }
-  
-  .dropdown .dropbtn {
-	font-size: 16px;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	font-size: 16px;  
 	border: none;
 	outline: none;
 	color: white;
@@ -53,37 +52,37 @@ body {
 	background-color: inherit;
 	font-family: inherit;
 	margin: 0;
-  }
-  
-  .navbar a:hover,
-  .dropdown:hover .dropbtn {
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
 	background-color: #a9d5e2;
-  }
-  
-  .dropdown-content {
+}
+
+.dropdown-content {
 	display: none;
 	position: absolute;
 	background-color: #f9f9f9;
-	min-width: 60px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  }
-  
-  .dropdown-content a {
+	min-width: 200px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	float: none;
 	color: black;
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
 	text-align: left;
-  }
-  
-  .dropdown-content a:hover {
+}
+
+.dropdown-content a:hover {
 	background-color: #ddd;
-  }
-  
-  .dropdown:hover .dropdown-content {
+}
+
+.dropdown:hover .dropdown-content {
 	display: block;
-  }
-  
+}
   /* Main Content Styles */
   #container {
 	padding-left: 20px;
