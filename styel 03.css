@@ -5,70 +5,79 @@ body {
 
 /* Header Styles */
 .header {
-  background-color: #333;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  color: #fff;
-  text-decoration: none;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #333;
+	padding: 20px;
+  }
+  
+  .header .logo {
+	font-size: 35px;
+	font-family: "Algerian", cursive;
+	color: #ffff;
+	text-decoration: none;
+	margin-left: 0px;
+  }
+  
+  .navbar {
+	overflow: hidden;
+	background-color: #333;
 }
 
 .navbar a {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 20px;
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 17px;
+	text-decoration: none;
 }
 
-/* Dropdown styling */
 .dropdown {
-  position: relative;
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	font-size: 16px;  
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: #a9d5e2;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #333;
-  min-width: 160px;
-  z-index: 1;
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 200px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
 }
 
 .dropdown-content a {
-  color: #fff;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
 }
 
-/* Media query for responsiveness */
-@media screen and (max-width: 768px) {
-  .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-  }
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
 
-  .navbar a {
-      padding: 10px 0;
-  }
-
-  .dropdown {
-      margin-top: 10px;
-  }
-
-  .dropdown-content {
-      min-width: 100%;
-  }
+.dropdown:hover .dropdown-content {
+	display: block;
 }
 
 /* Main Element Styles */
