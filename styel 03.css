@@ -201,23 +201,21 @@ body {
 /* Footer Styles */
 .footer {
   display: flex;
-  flex-wrap: wrap; /* Added flex-wrap for responsiveness */
   justify-content: space-between;
   align-items: center;
-  background-color: #000000;
+  background-color: #0000003a;
+  padding: 40px 80px;
 }
 
 .footer .copy {
   color: #fff;
-  text-decoration: none;
 }
 
 .bottom-links {
   display: flex;
-  flex-wrap: wrap; /* Added flex-wrap for responsiveness */
   justify-content: space-around;
   align-items: center;
-  padding: 4% 0; /* Use percentages for padding */
+  padding: 40px 0;
 }
 
 .bottom-links .links {
@@ -225,17 +223,18 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 40px;
 }
 
 .bottom-links .links span {
-  font-size: 1.5vw; /* Use viewport width for font size */
+  font-size: 20px;
   color: #fff;
   text-transform: uppercase;
-  margin: 2% 0;
+  margin: 10px 0;
 }
 
 .bottom-links .links a {
   text-decoration: none;
-  color: #77ccf3;
-  padding: 1% 2%; /* Adjusted padding for responsiveness */
+  color: #a1a1a1;
+  padding: 10px 20px;
 }
