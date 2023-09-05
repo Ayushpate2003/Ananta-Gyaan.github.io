@@ -1,141 +1,165 @@
 <html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>What is Deadlock</title>
-     <link rel="stylesheet" type="text/css" href="./styel 001.css">
-    
+    <link rel="stylesheet" type="text/css" href="./styel 001.css">
+    <link rel="icon" href="./web images/ananta gyaan logo (2).png">
 </head>
 
 <body>
 
     <header class="header">
+        <a href="#" class="logo"><img src="./web images/ananta gyaan logo (2).png" width="50" height="30">ANANTA
+            GYAAN</a>
+        <div class="navbar">
+            <a href="./index.html">Home</a>
+            <a href="./log in page.html">Login</a>
+            <div class="dropdown">
+                <button class="dropbtn">Operating system Topics
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="./Disk Scheduling Algorithm (page 13).html">Disk Scheduling Algorithm </a></li>
+                        <li><a href="./Transfer time and Bandwidh(page 12).html">Transfer time and Bandwidh</a></li>
+                        <li><a href="./Deadlock detection (page 9).html">Deadlock detection</a></li>
+                        <li><a href="./what is Hard disk (page 10).html">what is Hard disk</a></li>
+                        <li><a href="./rotational delay (page 11).html">rotational delay</a></li>
+                        <li><a href="./Banker's Algorithm (page 8).html">Banker's Algorithm</a></li>
+                        <li><a href="./Deadlock prevention (page 7).html">Deadlock prevention</a></li>
+                        <li><a href="./layered structure approach (page 5).html">layered structure approach</a></li>
+                        <li><a href="./what is kernel (page 3).html">what is kernel</a></li>
+                        <li><a href="./Deadlock (page 6).html">Deadlock</a></li>
+                        <li><a href="./types of kernel (page 4).html">types of kernel</a></li>
+                        <li><a href="./types of operating system (page 2).html">types of operating system</a></li>
 
-        <a href="#" class="logo"><img src="./web images/ananta gyaan logo (2).png"width="50"height="30">ANANTA GYAAN</a>
-      <div class="navbar">
-        
-      <a href="./index.html">Home</a>
-      <a href="./log in page.html">Login</a>
-      <div class="dropdown">
-        <button class="dropbtn">Subject 
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="./web COMPUTER NETWORK/Introduction and Definition of computer network(page 1).html">COMPUTER NETWORK</a> 
+                        <li><a href="./types of operating system (page 2).html">Real time operating system</a></li>
+                        <li><a href="./types of operating system (page 2).html">Batch operating system</a></li>
+                        <li><a href="./types of operating system (page 2).html">Distributed operating system</a></li>
+                        <li><a href="./types of operating system (page 2).html">Network opertaing system</a></li>
+                        <li><a href="./types of operating system (page 2).html">Single tasking & multi tasking operating
+                                system</a></li>
+                        <li><a href="./types of operating system (page 2).html">Multiprocessing operating system</a>
+                        </li>
+                        <li><a href="./types of operating system (page 2).html">multi-programming operating system</a>
+                        </li>
+                        <li><a href="./what is o.s (page 1).html">what is operating system</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Subject
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="./web COMPUTER NETWORK/Introduction and Definition of computer network(page 1).html">COMPUTER
+                        NETWORK</a>
+                    <!-- Add more subject links here -->
+                </div>
+            </div>
         </div>
-      </div> 
+    </header>
+
+    <div id="container">
+
+        <main id="center" class="column">
+            <article>
+                <h1><u>Deadlock</u></h1><br>
+                <p>Deadlock वह condition है जिसमें दो या दो से अधिक processes केवल एक resource के लिए fight (लड़ाई) करते
+                    हैं जिसके
+                    कारण कोई भी resource को access नही कर पाता है.<br>
+
+                    दूसरे शब्दों में कहें तो, “Deadlock वह स्थिति है जिसमें दो या दो से अधिक processes को अपने execution
+                    पूरा करने
+                    के लिए resource की आवश्यकता होती है परन्तु उन resources को किसी दूसरे process के द्वारा hold किया
+                    गया होता है.
+                    जिसके कारण process का execution पूरा नहीं हो पाता.”
+                    <br>
+                    डेडलॉक operating system में होने वाली एक स्थिति है जिसमे कोई एक process (प्रोसेस) waiting state में
+                    चली जाती है
+                    क्योंकि दूसरी process के द्वारा resource को hold किया गया होता है.
+                </p>
+                
+                <p><strong>उदहारण</strong> के लिए माना दो दोस्त है और दोनों कंप्यूटर गेम्स खेलना चाहते हैं जिसके कारण
+                    दोनों लड़ते है.
+                    एक के पास रिमोट कण्ट्रोल है तो दुसरे के पास गेम्स की cd है.
+                    जिसके कारण दोनों दोस्तों में से कोई भी नही खेल पाता है लेकिन दोनों में से कोई भी cooperate करने के
+                    लिए तैयार नही
+                    है. यह स्थिति ही डेडलॉक कहलाती है.</p><br><br>
+                <center><img src="./web images/deadlock-01.jpeg" alt="deadlock" width="400%" height="300%" align="center"
+                        border="2">
+                </center><br><br>
+                <p><strong>चित्र के अनुसार </strong>हमारे पास दो processes P1 तथा P2 हैं तथा दो resources R1 तथा R2 हैं.
+                    इसमें
+                    resource R1 जो है वह process P1 के साथ allocate है, और resource R2 जो है वह process P2 के साथ
+                    allocate है.
+                    परन्तु प्रक्रिया को पूरी होने के लिए P1 को resource R2 की आवश्यकता है इसलिए वह R2 के लिए request
+                    करता है,
+                    परन्तु R2 पहले से ही p2 के साथ allocate है.
+                    इसी तरह process P2 को अपनी execution को पूरी करने के लिए R1 की आवश्यकता है, परन्तु R1 तो पहले से ही
+                    P1 के
+                    साथ allocate (जुडा हुआ) है.दोनों P1 तथा P2 एक दुसरे के resources के लिए हमेशा wait (इन्तजार) करते
+                    रहते है.
+                    यही प्रक्रिया ही DEADLOCK कहलाती है.</p>
+                <h2><u>Conditions of Deadlock</u></h2><br>
+                <p>Deadlock की चार कंडीशन होती है जो निम्नलिखित है:-</p>
+                <ol type="I">
+                    <li>mutual exclusion</li>
+                    <li>hold & wait</li>
+                    <li>no preemption</li>
+                    <li>circular wait</li>
+                </ol>
+                <ol type="I">
+                    <li><strong>mutual exclusion – </strong>इस स्थिति में, कोई न कोई एक ऐसा resource होता है जिसे
+                        processes के मध्य
+                        share (साझा) ना किया जा सकें.इसमें एक समय में केवल एक process ही resource को use कर सकती है.
+                        अर्थात् कोई दो
+                        process एक समय में एक resource का प्रयोग नहीं कर सकते.</li><br>
+                    <li><strong>Hold & wait –</strong> इसमें, process एक resource को hold किये रहता है जबकि दुसरे
+                        resource के लिए
+                        wait (इन्तजार) करता है.</li><br>
+                    <li><strong>No preemption –</strong> वह resource जो किसी process के लिए allocate हो चूका हो, उसे
+                        जबरन किसी दुसरे
+                        process को allocate नही किया जा सकता है. Process अपनी मर्जी से resource को release करता है.</li>
+                    <br>
+                    <li><strong>Circular wait –</strong> इस स्थिति में, प्रत्येक process एक resource के लिए wait करता है
+                        जिसको दूसरे
+                        process ने held किया रहता है. इसमें सभी प्रोसेस एक circle के रूप में resources का इन्तजार करते
+                        हैं. इसलिए
+                        इसे circular wait कहा जाता है.</li><br>
+                </ol>
+                <center><img src="./web images/deadlock-02.jpeg" alt="deadlock" width="400%" height="300%" align="center"
+                        border="2">
+                </center><br><br>
+                <h2><u>Disadvantage of Deadlock</u></h2><br>
+                <ul>
+                    <li>इसके कारण process के execution में देरी होती है.</ii>
+                    <li>इसमें प्रोसेस को पता होना चाहिए कि future में उसे किस रिसोर्स की जरूरत होगी.</ii>
+                    <li>इसमें preemption आवश्यकता से अधिक बार होता है.</ii>
+                </ul>
+                <h2><u>Advantage of Deadlock</u></h2><br>
+                <ul>
+                    <li>यह स्थिति उन processes के लिए अच्छी है जो सिर्फ एक कार्य को ही perform करते हैं.</li>
+                    <li>deadlock avoidance के लिए no preemption की आवश्यकता नहीं होती.</li>
+                </ul>
+            </article>
+        </main>
     </div>
-        </nav>
-                  
-        </p></header>
-    
-        <div id="container">
-    
-            <main id="center" class="column">
-                <article>
-    <h1><u>Deadlock</u></h1><br>
-    <p>Deadlock वह condition है जिसमें दो या दो से अधिक processes केवल एक resource के लिए fight (लड़ाई) करते हैं जिसके
-        कारण कोई भी resource को access नही कर पाता है.<br>
-
-        दूसरे शब्दों में कहें तो, “Deadlock वह स्थिति है जिसमें दो या दो से अधिक processes को अपने execution पूरा करने
-        के लिए resource की आवश्यकता होती है परन्तु उन resources को किसी दूसरे process के द्वारा hold किया गया होता है.
-        जिसके कारण process का execution पूरा नहीं हो पाता.”
-        <br>
-        डेडलॉक operating system में होने वाली एक स्थिति है जिसमे कोई एक process (प्रोसेस) waiting state में चली जाती है
-        क्योंकि दूसरी process के द्वारा resource को hold किया गया होता है.
-    </p>
-    <script async src="https://chatbot-dist.s3.us-east-2.amazonaws.com/chatbot/build_chatbot.js" chatbotId="7faafc4a-ef0c-4268-832f-6858baaae4f4"></script>
-    <p><strong>उदहारण</strong> के लिए माना दो दोस्त है और दोनों कंप्यूटर गेम्स खेलना चाहते हैं जिसके कारण दोनों लड़ते है.
-        एक के पास रिमोट कण्ट्रोल है तो दुसरे के पास गेम्स की cd है.
-        जिसके कारण दोनों दोस्तों में से कोई भी नही खेल पाता है लेकिन दोनों में से कोई भी cooperate करने के लिए तैयार नही
-        है. यह स्थिति ही डेडलॉक कहलाती है.</p><br><br>
-    <center><img src="./web images/deadlock-01.jpeg" alt="deadlock" width="400" height="300" align="center" border="2">
-    </center><br><br>
-    <p><strong>चित्र के अनुसार </strong>हमारे पास दो processes P1 तथा P2 हैं तथा दो resources R1 तथा R2 हैं. इसमें
-        resource R1 जो है वह process P1 के साथ allocate है, और resource R2 जो है वह process P2 के साथ allocate है.
-        परन्तु प्रक्रिया को पूरी होने के लिए P1 को resource R2 की आवश्यकता है इसलिए वह R2 के लिए request करता है,
-        परन्तु R2 पहले से ही p2 के साथ allocate है.
-        इसी तरह process P2 को अपनी execution को पूरी करने के लिए R1 की आवश्यकता है, परन्तु R1 तो पहले से ही P1 के
-        साथ allocate (जुडा हुआ) है.दोनों P1 तथा P2 एक दुसरे के resources के लिए हमेशा wait (इन्तजार) करते रहते है.
-        यही प्रक्रिया ही DEADLOCK कहलाती है.</p>
-    <h2><u>Conditions of Deadlock</u></h2><br>
-    <p>Deadlock की चार कंडीशन होती है जो निम्नलिखित है:-</p>
-    <ol type="I">
-        <li>mutual exclusion</li>
-        <li>hold & wait</li>
-        <li>no preemption</li>
-        <li>circular wait</li>
-    </ol>
-    <ol type="I">
-        <li><strong>mutual exclusion – </strong>इस स्थिति में, कोई न कोई एक ऐसा resource होता है जिसे processes के मध्य
-            share (साझा) ना किया जा सकें.इसमें एक समय में केवल एक process ही resource को use कर सकती है. अर्थात् कोई दो
-            process एक समय में एक resource का प्रयोग नहीं कर सकते.</li><br>
-        <li><strong>Hold & wait –</strong> इसमें, process एक resource को hold किये रहता है जबकि दुसरे resource के लिए
-            wait (इन्तजार) करता है.</li><br>
-        <li><strong>No preemption –</strong> वह resource जो किसी process के लिए allocate हो चूका हो, उसे जबरन किसी दुसरे
-            process को allocate नही किया जा सकता है. Process अपनी मर्जी से resource को release करता है.</li><br>
-        <li><strong>Circular wait –</strong> इस स्थिति में, प्रत्येक process एक resource के लिए wait करता है जिसको दूसरे
-            process ने held किया रहता है. इसमें सभी प्रोसेस एक circle के रूप में resources का इन्तजार करते हैं. इसलिए
-            इसे circular wait कहा जाता है.</li><br>
-    </ol>
-    <center><img src="./web images/deadlock-02.jpeg" alt="deadlock" width="400" height="300" align="center" border="2">
-    </center><br><br>
-    <h2><u>Disadvantage of Deadlock</u></h2><br>
-    <ul>
-        <li>इसके कारण process के execution में देरी होती है.</ii>
-        <li>इसमें प्रोसेस को पता होना चाहिए कि future में उसे किस रिसोर्स की जरूरत होगी.</ii>
-        <li>इसमें preemption आवश्यकता से अधिक बार होता है.</ii>
-    </ul>
-    <h2><u>Advantage of Deadlock</u></h2><br>
-    <ul>
-    <li>यह स्थिति उन processes के लिए अच्छी है जो सिर्फ एक कार्य को ही perform करते हैं.</li>
-    <li>deadlock avoidance के लिए no preemption की आवश्यकता नहीं होती.</li>
-    </ul>
-</article>                              
-</main>
-
-<nav id="left" class="column">
-    <h3>Topics</h3>
-    <ul>
-        <li><a href="./Disk Scheduling Algorithm (page 13).html">Disk Scheduling Algorithm </a></li>
-        <li><a href="./Transfer time and Bandwidh(page 12).html">Transfer time and Bandwidh</a></li>
-        <li><a href="./Deadlock detection (page 9).html">Deadlock detection</a></li>
-        <li><a href="./what is Hard disk (page 10).html">what is Hard disk</a></li>
-        <li><a href="./rotational delay (page 11).html">rotational delay</a></li>
-        <li><a href="./Banker's Algorithm (page 8).html">Banker's Algorithm</a></li>
-        <li><a href="./Deadlock prevention (page 7).html">Deadlock prevention</a></li>
-        <li><a href="./layered structure approach (page 5).html">layered structure approach</a></li>
-        <li><a href="./what is kernel (page 3).html">what is kernel</a></li>
-        <li><a href="./Deadlock (page 6).html">Deadlock</a></li>
-        <li><a href="./types of kernel (page 4).html">types of kernel</a></li>
-        <li><a href="./types of operating system (page 2).html">types of operating system</a></li>
-        
-        <li><a href="./types of operating system (page 2).html">Real time operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">Batch operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">Distributed operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">Network opertaing system</a></li>
-        <li><a href="./types of operating system (page 2).html">Single tasking & multi tasking operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">Multiprocessing operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">multi-programming operating system</a></li>
-        <li><a href="./what is o.s (page 1).html">what is operating system</a></li>
-
-        <li><a href=""></a></li>
-    </ul>
-
-</nav>
-
-<div id="right" class="column">
-    <h3>Ads</h3>
-    
-</div>
-
-</div>
-
-<div id="footer-wrapper">
-<footer id="footer"><p>Footer...</p></footer>
-</div>
-
+    <div id="footer-wrapper">
+        <footer>
+            <!-- Footer content -->
+            <p>&copy; 2023 ANANTA GYAAN</p>
+            <p>
+                <a href="./index.html">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Services</a>
+                <a href="mailto:ayushpatel7869595243@gmail.com">Contact</a>
+                <!-- Added "mailto:" to create an email link -->
+            </p>
+        </footer>
+    </div>
 </body>
 
-</html>
-</body>
 </html>

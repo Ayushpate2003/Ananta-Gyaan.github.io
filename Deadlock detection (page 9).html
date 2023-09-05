@@ -1,160 +1,200 @@
- <html>
+<html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Deadlock detection</title>
-     <link rel="stylesheet" type="text/css" href="./styel 001.css">
-    
+    <link rel="stylesheet" type="text/css" href="./styel 001.css">
+    <link rel="icon" href="./web images/ananta gyaan logo (2).png">
 </head>
 
 <body>
 
-    <header class="header">
+    header class="header">
+    <a href="#" class="logo"><img src="./web images/ananta gyaan logo (2).png" width="50" height="30">ANANTA
+        GYAAN</a>
+    <div class="navbar">
+        <a href="./index.html">Home</a>
+        <a href="./log in page.html">Login</a>
+        <div class="dropdown">
+            <button class="dropbtn">Operating system Topics
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <ul>
+                    <li><a href="./Disk Scheduling Algorithm (page 13).html">Disk Scheduling Algorithm </a></li>
+                    <li><a href="./Transfer time and Bandwidh(page 12).html">Transfer time and Bandwidh</a></li>
+                    <li><a href="./Deadlock detection (page 9).html">Deadlock detection</a></li>
+                    <li><a href="./what is Hard disk (page 10).html">what is Hard disk</a></li>
+                    <li><a href="./rotational delay (page 11).html">rotational delay</a></li>
+                    <li><a href="./Banker's Algorithm (page 8).html">Banker's Algorithm</a></li>
+                    <li><a href="./Deadlock prevention (page 7).html">Deadlock prevention</a></li>
+                    <li><a href="./layered structure approach (page 5).html">layered structure approach</a></li>
+                    <li><a href="./what is kernel (page 3).html">what is kernel</a></li>
+                    <li><a href="./Deadlock (page 6).html">Deadlock</a></li>
+                    <li><a href="./types of kernel (page 4).html">types of kernel</a></li>
+                    <li><a href="./types of operating system (page 2).html">types of operating system</a></li>
 
-        <a href="#" class="logo"><img src="./web images/ananta gyaan logo (2).png"width="50"height="30">ANANTA GYAAN</a>
-      <div class="navbar">
-        
-      <a href="./index.html">Home</a>
-      <a href="./log in page.html">Login</a>
-      <div class="dropdown">
-        <button class="dropbtn">Subject 
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="./web COMPUTER NETWORK/Introduction and Definition of computer network(page 1).html">COMPUTER NETWORK</a> 
+                    <li><a href="./types of operating system (page 2).html">Real time operating system</a></li>
+                    <li><a href="./types of operating system (page 2).html">Batch operating system</a></li>
+                    <li><a href="./types of operating system (page 2).html">Distributed operating system</a></li>
+                    <li><a href="./types of operating system (page 2).html">Network opertaing system</a></li>
+                    <li><a href="./types of operating system (page 2).html">Single tasking & multi tasking operating
+                            system</a></li>
+                    <li><a href="./types of operating system (page 2).html">Multiprocessing operating system</a></li>
+                    <li><a href="./types of operating system (page 2).html">multi-programming operating system</a></li>
+                    <li><a href="./what is o.s (page 1).html">what is operating system</a></li>
+
+                </ul>
+            </div>
         </div>
-      </div> 
+        <div class="dropdown">
+            <button class="dropbtn">Subject
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="./web COMPUTER NETWORK/Introduction and Definition of computer network(page 1).html">COMPUTER
+                    NETWORK</a>
+                <!-- Add more subject links here -->
+            </div>
+        </div>
     </div>
-        </nav>
-                  
-        </p></header>
-    
-        <div id="container">
-    
-            <main id="center" class="column">
-                <article>
-                    <script async src="https://chatbot-dist.s3.us-east-2.amazonaws.com/chatbot/build_chatbot.js" chatbotId="7faafc4a-ef0c-4268-832f-6858baaae4f4"></script>
-    <h2><u>Deadlock Detection </u></h2>
-    <p>इस दृष्टिकोण में, OS गतिरोध से बचने या रोकने के लिए कोई तंत्र लागू नहीं करता है। इसलिए सिस्टम मानता है कि गतिरोध
-        निश्चित रूप से घटित होगा। गतिरोध से छुटकारा पाने के लिए, os समय-समय पर किसी गतिरोध के लिए सिस्टम की जाँच करता
-        है। मामले में, यह किसी भी गतिरोध का पता लगाता है, तो OS कुछ पुनर्प्राप्ति तकनीकों का उपयोग करके सिस्टम को
-        पुनर्प्राप्त करेगा।
-        ओएस का मुख्य कार्य डेडलॉक्स का पता लगा रहा है। Os संसाधन आवंटन ग्राफ की मदद से गतिरोध का पता लगा सकता है।<br>
-        <center><img src="./web images/Deadlock Detention 01.jpg" alt="Deadlock Detention " width="400" height="300"
-                align="center" border="2"></center><br>
-        <center>ओएस डेडलॉक डिटेक्शन एंड रिकवरी</center><br>
-        एकल उदाहरण संसाधन प्रकारों में, यदि सिस्टम में एक चक्र बन रहा है, तो निश्चित रूप से गतिरोध होगा। दूसरी ओर, कई
-        इंस्टेंस्ड रिसोर्स टाइप ग्राफ में, एक चक्र का पता लगाना
-        ही पर्याप्त नहीं है। हमें संसाधन आवंटन ग्राफ को आवंटन मैट्रिक्स और अनुरोध मैट्रिक्स में परिवर्तित करके सिस्टम पर
-        सुरक्षा एल्गोरिदम लागू करना होगा।<br>
-        <em>In other words</em><br>
-        1. यदि संसाधनों का एक ही उदाहरण है -
-        इस मामले में गतिरोध का पता लगाने के लिए, हम संसाधन आवंटन ग्राफ में चक्र की जांच के लिए एक एल्गोरिथ्म चला सकते
-        हैं। गतिरोध के लिए ग्राफ में एक चक्र की उपस्थिति पर्याप्त स्थिति है।
-        <center><img src="./web images/Deadlock Detention 02.png " width="400" height="300" align="center" border="2">
-        </center><br>
-        उपरोक्त आरेख में, संसाधन 1 और संसाधन 2 के एकल उदाहरण हैं। एक चक्र R1 → P1 → R2 → P2 है। तो, डेडलॉक की पुष्टि हो
-        गई है।<br>
-        2. यदि संसाधनों के कई उदाहरण हैं -<br>
-        चक्र का पता लगाना आवश्यक है लेकिन गतिरोध का पता लगाने के लिए पर्याप्त स्थिति नहीं है, इस मामले में, सिस्टम
-        गतिरोध में हो सकता है या नहीं भी अलग-अलग स्थितियों के अनुसार भिन्न होता है।<br>
+    </header>
 
-        3. वेट-फॉर ग्राफ एल्गोरिथम -<br>
+    <div id="container">
 
-        वेट-फॉर ग्राफ़ एल्गोरिथम एक डेडलॉक डिटेक्शन एल्गोरिथम है जिसका उपयोग सिस्टम में गतिरोध का पता लगाने के लिए किया
-        जाता है जहाँ संसाधनों के कई उदाहरण हो सकते हैं। एल्गोरिथम एक वेट-फॉर ग्राफ़ का निर्माण करके काम करता है, जो एक
-        निर्देशित ग्राफ़ है जो प्रक्रियाओं और संसाधनों के बीच निर्भरता का प्रतिनिधित्व करता है।<br>
-        <h2><u>Deadlock Recovery </u></h2>
-      
-        एक पारंपरिक ऑपरेटिंग सिस्टम जैसे विंडोज डेडलॉक रिकवरी से निपटता नहीं है क्योंकि यह एक समय और जगह लेने वाली
-        प्रक्रिया है। रीयल-टाइम ऑपरेटिंग सिस्टम डेडलॉक रिकवरी का उपयोग करते हैं।<br>
-<ol type="1">
-    <li>प्रक्रिया को खत्म करना -<br>
-        गतिरोध में शामिल सभी प्रक्रियाओं को मारना। एक के बाद एक हत्या प्रक्रिया। प्रत्येक प्रक्रिया को समाप्त करने के
-        बाद फिर से गतिरोध की जाँच करें और प्रक्रिया को तब तक दोहराते रहें जब तक कि प्रणाली गतिरोध से ठीक न हो जाए। सभी
-        प्रक्रियाओं को एक-एक करके समाप्त करने से सिस्टम को सर्कुलर प्रतीक्षा स्थितियों को तोड़ने में मदद मिलती है।<br></li>
-        <li>रिसोर्स प्रीमेशन -<br>
-        गतिरोध में शामिल प्रक्रियाओं से संसाधनों को प्रीमेप्ट किया जाता है, और प्रीएम्प्टेड संसाधनों को अन्य प्रक्रियाओं
-        को आवंटित किया जाता है ताकि सिस्टम को डेडलॉक से पुनर्प्राप्त करने की संभावना हो। इस मामले में, सिस्टम भुखमरी में
-        चला जाता है।<br></li>
-        <li>समवर्ती नियंत्रण -<br> कई समवर्ती प्रक्रियाओं वाले सिस्टम में डेटा विसंगतियों को रोकने के लिए समवर्ती नियंत्रण तंत्र
-        का उपयोग किया जाता है। ये तंत्र सुनिश्चित करते हैं कि समवर्ती प्रक्रियाएं एक ही समय में एक ही डेटा तक नहीं
-        पहुंचती हैं, जिससे विसंगतियां और त्रुटियां हो सकती हैं। गतिरोध समवर्ती प्रणालियों में हो सकता है जब दो या दो से
-        अधिक प्रक्रियाएं अवरुद्ध हो जाती हैं, एक दूसरे के लिए आवश्यक संसाधनों को जारी करने की प्रतीक्षा कर रहे हैं। इसका
-        परिणाम सिस्टम-वाइड स्टॉल हो सकता है, जहां कोई प्रक्रिया प्रगति नहीं कर सकती है। समवर्ती नियंत्रण तंत्र साझा
-        संसाधनों तक पहुंच को प्रबंधित करके गतिरोध को रोकने में मदद कर सकता है और यह सुनिश्चित कर सकता है कि समवर्ती
-        प्रक्रियाएं एक-दूसरे के साथ हस्तक्षेप न करें।</li><br>
-    </ol>
-       <b> Advantages या Disadvantages:</b><br><br>
-        ऑपरेटिंग सिस्टम में डेडलॉक डिटेक्शन और रिकवरी के <b>Advantages</b>:<br>
-        <ul type="square">
-        <li>बेहतर सिस्टम स्थिरता: डेडलॉक सिस्टम-वाइड स्टॉल का कारण बन सकते हैं, और डेडलॉक का पता लगाने और हल करने से सिस्टम
-        की स्थिरता में सुधार करने में मदद मिल सकती है।</li>
-       <li>बेहतर संसाधन उपयोग: गतिरोधों का पता लगाने और उनका समाधान करके, ऑपरेटिंग सिस्टम यह सुनिश्चित कर सकता है कि
-        संसाधनों का कुशलतापूर्वक उपयोग किया जाता है और सिस्टम उपयोगकर्ता के अनुरोधों के प्रति उत्तरदायी रहता है।</li>
-        <li>बेहतर सिस्टम डिज़ाइन : डेडलॉक डिटेक्शन और रिकवरी एल्गोरिदम सिस्टम के व्यवहार और प्रक्रियाओं और संसाधनों के बीच
-        संबंधों में अंतर्दृष्टि प्रदान कर सकते हैं, जिससे सिस्टम के डिज़ाइन को सूचित करने और सुधारने में मदद मिलती है।</li></ul>
-        
-        ऑपरेटिंग सिस्टम में डेडलॉक डिटेक्शन और रिकवरी के <b>Disadvantages</b>:<br>
-        <ul type="square"></ul>
-        <li>प्रदर्शन ओवरहेड: गतिरोध का पता लगाने और पुनर्प्राप्ति एल्गोरिदम प्रदर्शन के मामले में एक महत्वपूर्ण ओवरहेड पेश
-        कर सकते हैं, क्योंकि सिस्टम को गतिरोधों की नियमित जांच करनी चाहिए और उन्हें हल करने के लिए उचित कार्रवाई करनी
-        चाहिए।</li>
-        
-        <li>प्जटिलता: डेडलॉक डिटेक्शन और रिकवरी एल्गोरिदम लागू करने के लिए जटिल हो सकते हैं, खासकर अगर वे संसाधन आवंटन ग्राफ
-        या टाइमस्टैम्पिंग जैसी उन्नत तकनीकों का उपयोग करते हैं।<br>
-        झूठे सकारात्मक और नकारात्मक: गतिरोध का पता लगाने वाले एल्गोरिदम सही नहीं हैं और गलत सकारात्मक या नकारात्मक
-        उत्पन्न कर सकते हैं, जो गतिरोध की उपस्थिति का संकेत देते हैं जब वे मौजूद नहीं होते हैं या मौजूद गतिरोधों का पता
-        लगाने में विफल होते हैं।</li>
-        <li>डेटा हानि का जोखिम : कुछ मामलों में, पुनर्प्राप्ति एल्गोरिदम को एक या अधिक प्रक्रियाओं की स्थिति को वापस करने की
-        आवश्यकता हो सकती है, जिससे डेटा हानि या भ्रष्टाचार हो सकता है।</li>
-    </p>
+        <main id="center" class="column">
+            <article>
+                
+                <h2><u>Deadlock Detection </u></h2>
+                <p>इस दृष्टिकोण में, OS गतिरोध से बचने या रोकने के लिए कोई तंत्र लागू नहीं करता है। इसलिए सिस्टम मानता
+                    है कि गतिरोध
+                    निश्चित रूप से घटित होगा। गतिरोध से छुटकारा पाने के लिए, os समय-समय पर किसी गतिरोध के लिए सिस्टम की
+                    जाँच करता
+                    है। मामले में, यह किसी भी गतिरोध का पता लगाता है, तो OS कुछ पुनर्प्राप्ति तकनीकों का उपयोग करके
+                    सिस्टम को
+                    पुनर्प्राप्त करेगा।
+                    ओएस का मुख्य कार्य डेडलॉक्स का पता लगा रहा है। Os संसाधन आवंटन ग्राफ की मदद से गतिरोध का पता लगा
+                    सकता है।<br>
+                    <center><img src="./web images/Deadlock Detention 01.jpg" alt="Deadlock Detention " width="400%"
+                            height="300%" align="center" border="2"></center><br>
+                    <center>ओएस डेडलॉक डिटेक्शन एंड रिकवरी</center><br>
+                    एकल उदाहरण संसाधन प्रकारों में, यदि सिस्टम में एक चक्र बन रहा है, तो निश्चित रूप से गतिरोध होगा।
+                    दूसरी ओर, कई
+                    इंस्टेंस्ड रिसोर्स टाइप ग्राफ में, एक चक्र का पता लगाना
+                    ही पर्याप्त नहीं है। हमें संसाधन आवंटन ग्राफ को आवंटन मैट्रिक्स और अनुरोध मैट्रिक्स में परिवर्तित
+                    करके सिस्टम पर
+                    सुरक्षा एल्गोरिदम लागू करना होगा।<br>
+                    <em>In other words</em><br>
+                    1. यदि संसाधनों का एक ही उदाहरण है -
+                    इस मामले में गतिरोध का पता लगाने के लिए, हम संसाधन आवंटन ग्राफ में चक्र की जांच के लिए एक एल्गोरिथ्म
+                    चला सकते
+                    हैं। गतिरोध के लिए ग्राफ में एक चक्र की उपस्थिति पर्याप्त स्थिति है।
+                    <center><img src="./web images/Deadlock Detention 02.png " width="400%" height="300%" align="center"
+                            border="2">
+                    </center><br>
+                    उपरोक्त आरेख में, संसाधन 1 और संसाधन 2 के एकल उदाहरण हैं। एक चक्र R1 → P1 → R2 → P2 है। तो, डेडलॉक
+                    की पुष्टि हो
+                    गई है।<br>
+                    2. यदि संसाधनों के कई उदाहरण हैं -<br>
+                    चक्र का पता लगाना आवश्यक है लेकिन गतिरोध का पता लगाने के लिए पर्याप्त स्थिति नहीं है, इस मामले में,
+                    सिस्टम
+                    गतिरोध में हो सकता है या नहीं भी अलग-अलग स्थितियों के अनुसार भिन्न होता है।<br>
+
+                    3. वेट-फॉर ग्राफ एल्गोरिथम -<br>
+
+                    वेट-फॉर ग्राफ़ एल्गोरिथम एक डेडलॉक डिटेक्शन एल्गोरिथम है जिसका उपयोग सिस्टम में गतिरोध का पता लगाने
+                    के लिए किया
+                    जाता है जहाँ संसाधनों के कई उदाहरण हो सकते हैं। एल्गोरिथम एक वेट-फॉर ग्राफ़ का निर्माण करके काम करता
+                    है, जो एक
+                    निर्देशित ग्राफ़ है जो प्रक्रियाओं और संसाधनों के बीच निर्भरता का प्रतिनिधित्व करता है।<br>
+                <h2><u>Deadlock Recovery </u></h2>
+
+                एक पारंपरिक ऑपरेटिंग सिस्टम जैसे विंडोज डेडलॉक रिकवरी से निपटता नहीं है क्योंकि यह एक समय और जगह लेने
+                वाली
+                प्रक्रिया है। रीयल-टाइम ऑपरेटिंग सिस्टम डेडलॉक रिकवरी का उपयोग करते हैं।<br>
+                <ol type="1">
+                    <li>प्रक्रिया को खत्म करना -<br>
+                        गतिरोध में शामिल सभी प्रक्रियाओं को मारना। एक के बाद एक हत्या प्रक्रिया। प्रत्येक प्रक्रिया को
+                        समाप्त करने के
+                        बाद फिर से गतिरोध की जाँच करें और प्रक्रिया को तब तक दोहराते रहें जब तक कि प्रणाली गतिरोध से ठीक
+                        न हो जाए। सभी
+                        प्रक्रियाओं को एक-एक करके समाप्त करने से सिस्टम को सर्कुलर प्रतीक्षा स्थितियों को तोड़ने में मदद
+                        मिलती है।<br></li>
+                    <li>रिसोर्स प्रीमेशन -<br>
+                        गतिरोध में शामिल प्रक्रियाओं से संसाधनों को प्रीमेप्ट किया जाता है, और प्रीएम्प्टेड संसाधनों को
+                        अन्य प्रक्रियाओं
+                        को आवंटित किया जाता है ताकि सिस्टम को डेडलॉक से पुनर्प्राप्त करने की संभावना हो। इस मामले में,
+                        सिस्टम भुखमरी में
+                        चला जाता है।<br></li>
+                    <li>समवर्ती नियंत्रण -<br> कई समवर्ती प्रक्रियाओं वाले सिस्टम में डेटा विसंगतियों को रोकने के लिए
+                        समवर्ती नियंत्रण तंत्र
+                        का उपयोग किया जाता है। ये तंत्र सुनिश्चित करते हैं कि समवर्ती प्रक्रियाएं एक ही समय में एक ही
+                        डेटा तक नहीं
+                        पहुंचती हैं, जिससे विसंगतियां और त्रुटियां हो सकती हैं। गतिरोध समवर्ती प्रणालियों में हो सकता है
+                        जब दो या दो से
+                        अधिक प्रक्रियाएं अवरुद्ध हो जाती हैं, एक दूसरे के लिए आवश्यक संसाधनों को जारी करने की प्रतीक्षा
+                        कर रहे हैं। इसका
+                        परिणाम सिस्टम-वाइड स्टॉल हो सकता है, जहां कोई प्रक्रिया प्रगति नहीं कर सकती है। समवर्ती नियंत्रण
+                        तंत्र साझा
+                        संसाधनों तक पहुंच को प्रबंधित करके गतिरोध को रोकने में मदद कर सकता है और यह सुनिश्चित कर सकता है
+                        कि समवर्ती
+                        प्रक्रियाएं एक-दूसरे के साथ हस्तक्षेप न करें।</li><br>
+                </ol>
+                <b> Advantages या Disadvantages:</b><br><br>
+                ऑपरेटिंग सिस्टम में डेडलॉक डिटेक्शन और रिकवरी के <b>Advantages</b>:<br>
+                <ul type="square">
+                    <li>बेहतर सिस्टम स्थिरता: डेडलॉक सिस्टम-वाइड स्टॉल का कारण बन सकते हैं, और डेडलॉक का पता लगाने और हल
+                        करने से सिस्टम
+                        की स्थिरता में सुधार करने में मदद मिल सकती है।</li>
+                    <li>बेहतर संसाधन उपयोग: गतिरोधों का पता लगाने और उनका समाधान करके, ऑपरेटिंग सिस्टम यह सुनिश्चित कर
+                        सकता है कि
+                        संसाधनों का कुशलतापूर्वक उपयोग किया जाता है और सिस्टम उपयोगकर्ता के अनुरोधों के प्रति उत्तरदायी
+                        रहता है।</li>
+                    <li>बेहतर सिस्टम डिज़ाइन : डेडलॉक डिटेक्शन और रिकवरी एल्गोरिदम सिस्टम के व्यवहार और प्रक्रियाओं और
+                        संसाधनों के बीच
+                        संबंधों में अंतर्दृष्टि प्रदान कर सकते हैं, जिससे सिस्टम के डिज़ाइन को सूचित करने और सुधारने में
+                        मदद मिलती है।</li>
+                </ul>
+
+                ऑपरेटिंग सिस्टम में डेडलॉक डिटेक्शन और रिकवरी के <b>Disadvantages</b>:<br>
+                <ul type="square"></ul>
+                <li>प्रदर्शन ओवरहेड: गतिरोध का पता लगाने और पुनर्प्राप्ति एल्गोरिदम प्रदर्शन के मामले में एक महत्वपूर्ण
+                    ओवरहेड पेश
+                    कर सकते हैं, क्योंकि सिस्टम को गतिरोधों की नियमित जांच करनी चाहिए और उन्हें हल करने के लिए उचित
+                    कार्रवाई करनी
+                    चाहिए।</li>
+
+                <li>प्जटिलता: डेडलॉक डिटेक्शन और रिकवरी एल्गोरिदम लागू करने के लिए जटिल हो सकते हैं, खासकर अगर वे संसाधन
+                    आवंटन ग्राफ
+                    या टाइमस्टैम्पिंग जैसी उन्नत तकनीकों का उपयोग करते हैं।<br>
+                    झूठे सकारात्मक और नकारात्मक: गतिरोध का पता लगाने वाले एल्गोरिदम सही नहीं हैं और गलत सकारात्मक या
+                    नकारात्मक
+                    उत्पन्न कर सकते हैं, जो गतिरोध की उपस्थिति का संकेत देते हैं जब वे मौजूद नहीं होते हैं या मौजूद
+                    गतिरोधों का पता
+                    लगाने में विफल होते हैं।</li>
+                <li>डेटा हानि का जोखिम : कुछ मामलों में, पुनर्प्राप्ति एल्गोरिदम को एक या अधिक प्रक्रियाओं की स्थिति को
+                    वापस करने की
+                    आवश्यकता हो सकती है, जिससे डेटा हानि या भ्रष्टाचार हो सकता है।</li>
+                </p>
 
 
-</article>                              
-</main>
+            </article>
+        </main>
 
-<nav id="left" class="column">
-    <h3>Topics</h3>
-    <ul>
-         <li><a href="./Disk Scheduling Algorithm (page 13).html">Disk Scheduling Algorithm </a></li>
-        <li><a href="./Transfer time and Bandwidh(page 12).html">Transfer time and Bandwidh</a></li>
-        <li><a href="./Deadlock detection (page 9).html">Deadlock detection</a></li>
-        <li><a href="./what is Hard disk (page 10).html">what is Hard disk</a></li>
-        <li><a href="./rotational delay (page 11).html">rotational delay</a></li>
-        <li><a href="./Banker's Algorithm (page 8).html">Banker's Algorithm</a></li>
-        <li><a href="./Deadlock prevention (page 7).html">Deadlock prevention</a></li>
-        <li><a href="./layered structure approach (page 5).html">layered structure approach</a></li>
-        <li><a href="./what is kernel (page 3).html">what is kernel</a></li>
-        <li><a href="./Deadlock (page 6).html">Deadlock</a></li>
-        <li><a href="./types of kernel (page 4).html">types of kernel</a></li>
-        <li><a href="./types of operating system (page 2).html">types of operating system</a></li>
-        
-        <li><a href="./types of operating system (page 2).html">Real time operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">Batch operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">Distributed operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">Network opertaing system</a></li>
-        <li><a href="./types of operating system (page 2).html">Single tasking & multi tasking operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">Multiprocessing operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">multi-programming operating system</a></li>
-        <li><a href="./what is o.s (page 1).html">what is operating system</a></li>
-
-        
-        <li><a href=""></a></li>
-    </ul>
-
-</nav>
-
-<div id="right" class="column">
-    <h3>Ads</h3>
-    
-</div>
-
-</div>
-
-<div id="footer-wrapper">
-<footer id="footer"><p>Footer...</p></footer>
-</div>
-
+    </div>
+    <div id="footer-wrapper">
+        <footer>
+            <!-- Footer content -->
+            <p>&copy; 2023 ANANTA GYAAN</p>
+            <p>
+                <a href="./index.html">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Services</a>
+                <a href="mailto:ayushpatel7869595243@gmail.com">Contact</a>
+                <!-- Added "mailto:" to create an email link -->
+            </p>
+        </footer>
+    </div>
 </body>
 
-</html>ō
+</html>

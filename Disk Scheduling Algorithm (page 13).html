@@ -1,157 +1,187 @@
- <html>
+<html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Disk Scheduling Algorithm</title>
-     <link rel="stylesheet" type="text/css" href="./styel 001.css">
-    
+    <link rel="stylesheet" type="text/css" href="./styel 001.css">
+    <link rel="icon" href="./web images/ananta gyaan logo (2).png">
 </head>
+
 
 <body>
 
     <header class="header">
-        <script async src="https://chatbot-dist.s3.us-east-2.amazonaws.com/chatbot/build_chatbot.js" chatbotId="7faafc4a-ef0c-4268-832f-6858baaae4f4"></script>
-    <a href="#" class="logo"><img src="./web images/ananta gyaan logo (2).png"width="50"height="30">ANANTA GYAAN</a>
-  <div class="navbar">
-    
-  <a href="./index.html">Home</a>
-  <a href="./log in page.html">Login</a>
-  <div class="dropdown">
-    <button class="dropbtn">Subject 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="./web COMPUTER NETWORK/Introduction and Definition of computer network(page 1).html">COMPUTER NETWORK</a> 
-    </div>
-  </div> 
-</div>
-    </nav>
-              
-    </p></header>
+        <a href="#" class="logo"><img src="./web images/ananta gyaan logo (2).png" width="50" height="30">ANANTA
+            GYAAN</a>
+        <div class="navbar">
+            <a href="./index.html">Home</a>
+            <a href="./log in page.html">Login</a>
+            <div class="dropdown">
+                <button class="dropbtn">Operating system Topics
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="./Disk Scheduling Algorithm (page 13).html">Disk Scheduling Algorithm </a></li>
+                        <li><a href="./Transfer time and Bandwidh(page 12).html">Transfer time and Bandwidh</a></li>
+                        <li><a href="./Deadlock detection (page 9).html">Deadlock detection</a></li>
+                        <li><a href="./what is Hard disk (page 10).html">what is Hard disk</a></li>
+                        <li><a href="./rotational delay (page 11).html">rotational delay</a></li>
+                        <li><a href="./Banker's Algorithm (page 8).html">Banker's Algorithm</a></li>
+                        <li><a href="./Deadlock prevention (page 7).html">Deadlock prevention</a></li>
+                        <li><a href="./layered structure approach (page 5).html">layered structure approach</a></li>
+                        <li><a href="./what is kernel (page 3).html">what is kernel</a></li>
+                        <li><a href="./Deadlock (page 6).html">Deadlock</a></li>
+                        <li><a href="./types of kernel (page 4).html">types of kernel</a></li>
+                        <li><a href="./types of operating system (page 2).html">types of operating system</a></li>
+
+                        <li><a href="./types of operating system (page 2).html">Real time operating system</a></li>
+                        <li><a href="./types of operating system (page 2).html">Batch operating system</a></li>
+                        <li><a href="./types of operating system (page 2).html">Distributed operating system</a></li>
+                        <li><a href="./types of operating system (page 2).html">Network opertaing system</a></li>
+                        <li><a href="./types of operating system (page 2).html">Single tasking & multi tasking operating
+                                system</a></li>
+                        <li><a href="./types of operating system (page 2).html">Multiprocessing operating system</a>
+                        </li>
+                        <li><a href="./types of operating system (page 2).html">multi-programming operating system</a>
+                        </li>
+                        <li><a href="./what is o.s (page 1).html">what is operating system</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Subject
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="./web COMPUTER NETWORK/Introduction and Definition of computer network(page 1).html">COMPUTER
+                        NETWORK</a>
+                    <!-- Add more subject links here -->
+                </div>
+            </div>
+        </div>
+    </header>
 
     <div id="container">
 
         <main id="center" class="column">
             <article>
-       <h2><u>Disk Scheduling Algorithm</u></h2><br>
-    <p>
-        हम एक कंप्यूटर में एक समय में बहुत सारें operation कर सकते है तो उन सभी ऑपरेशन की requests को मैनेज करना बहुत
-        जरुरी होता है जो सिस्टम में एक समय में run होते है.<br>
+                <h2><u>Disk Scheduling Algorithm</u></h2><br>
+                <p>
+                    हम एक कंप्यूटर में एक समय में बहुत सारें operation कर सकते है तो उन सभी ऑपरेशन की requests को मैनेज
+                    करना बहुत
+                    जरुरी होता है जो सिस्टम में एक समय में run होते है.<br>
 
-        इन सभी requestsको नियंत्रित करने तथा इन्हें मैमोरी उपलब्ध कराने के लिए ऑपरेटिंग सिस्टम के द्वारा disk scheduling
-        का प्रयोग किया जाता है.<br>
+                    इन सभी requestsको नियंत्रित करने तथा इन्हें मैमोरी उपलब्ध कराने के लिए ऑपरेटिंग सिस्टम के द्वारा
+                    disk scheduling
+                    का प्रयोग किया जाता है.<br>
 
-        इसमें CPU के समय को सभी requests के मध्य बाँट दिया जाता है जिससे disk scheduling यह निर्धारित करती है कि कौन सा
-        प्रोसेस किस समय CPU के द्वारा execute किया जायेगा.<br>
-        scheduling का अर्थ है कि एक समय में CPU को दिए गये सभी requests को execute करना.<br>
-
-
-        सरल शब्दों में कहें तो disk scheduling का प्रयोग किसी भी request की seek time को कम करने के लिए किया जाता है.
-        चूँकि कंप्यूटर में एक समय में operations की बहुत सारी request आती है जिससे सिस्टम बहुत ही slow हो जाता है. तो इन
-        requests को schedule करना बहुत जरुरी हो जाता है जिससे कि सिस्टम की कार्यक्षमता प्रभावित ना हों.<br>
-
-        disk scheduling को I/O scheduling भी कहते है.<br><br>
-        <b> disk scheduling algorithms</b> :-<br>
-        कुछ disk scheduling algorithms निम्नलिखित है:-
-<ul type ="square">
-        <b><li>FCFS (first come first serve)</li>
-        <li> SSTF (shortest seek time first)</li>
-            <li>scan</li>
-                <li>C-scan scheduling</li></b>
-    <br>
-        <li>FCFS (first come first serve):-<br>
-        FCFS scheduling सभी scheduling algorithms में सबसे सरल है.
-
-        FCFS में, जो भी request पहले आएगी उसे सबसे पहले execute किया जाता है. इसमें सभी requests एक queue (पंक्ति) में
-        एक के बाद एक लगी रहती है. सभी requests का एक क्रम होता है और वह अपने क्रमानुसार ही CPU के द्वारा execute होती
-        है.
+                    इसमें CPU के समय को सभी requests के मध्य बाँट दिया जाता है जिससे disk scheduling यह निर्धारित करती
+                    है कि कौन सा
+                    प्रोसेस किस समय CPU के द्वारा execute किया जायेगा.<br>
+                    scheduling का अर्थ है कि एक समय में CPU को दिए गये सभी requests को execute करना.<br>
 
 
-        इस अल्गोरिथम का लाभ यह है कि इसे implement करना बहुत आसान होता है.
-        इस अल्गोरिथम की हानि यह है कि इससे seek time कम नहीं होता है.</li><br>
+                    सरल शब्दों में कहें तो disk scheduling का प्रयोग किसी भी request की seek time को कम करने के लिए किया
+                    जाता है.
+                    चूँकि कंप्यूटर में एक समय में operations की बहुत सारी request आती है जिससे सिस्टम बहुत ही slow हो
+                    जाता है. तो इन
+                    requests को schedule करना बहुत जरुरी हो जाता है जिससे कि सिस्टम की कार्यक्षमता प्रभावित ना हों.<br>
 
-        <li>SSTF (shortest seek time first):-<br>
-        SSTF algorithm में, उस request को सबसे पहले execute किया जाता है जिसका seek time सबसे कम होता है अर्थात् वह
-        request जो कि run होने के लिए CPU का सबसे कम समय लेगी उसे सबसे पहले execute किया जायेगा.
+                    disk scheduling को I/O scheduling भी कहते है.<br><br>
+                    <b> disk scheduling algorithms</b> :-<br>
+                    कुछ disk scheduling algorithms निम्नलिखित है:-
+                <ul type="square">
+                    <b>
+                        <li>FCFS (first come first serve)</li>
+                        <li> SSTF (shortest seek time first)</li>
+                        <li>scan</li>
+                        <li>C-scan scheduling</li>
+                    </b>
+                    <br>
+                    <li>FCFS (first come first serve):-<br>
+                        FCFS scheduling सभी scheduling algorithms में सबसे सरल है.
 
-        इसमें सभी requests की जांच की जाती है और उनके seek time के अनुसार उन्हें क्रम में arrange किया जाता है और जिस
-        request का seek time सबसे कम होता है उसे सबसे पहले execute कर दिया जाता है.
-
-        SSTF जो है वह FCFS से बेहतर है क्योंकि यह सिस्टम के औसत response time को घटा देता है और सिस्टम के throughput
-        (प्रवाह क्षमता) को बढ़ा देता है.
-
-        लेकिन इसकी हानि यह है कि कुछ requests को यह पूरा नहीं करता है क्योंकि अगर request का seek time, आने वाली request
-        के time से अधिक होता है तो.</li><br>
-
-        <li>scan scheduling:-<br>
-        इस अल्गोरिथम को elevator algorithm भी कहते है.
-
-        इस अल्गोरिथम में, डिस्क में सबसे नीचे की तरफ scan करते हुए path में मिलने वाली requests को execute किया जाता है
-        और फिर डिस्क के सबसे नीचे end से होते हुए ऊपर की तरफ scan करते हुए path में मिलने वाली requests को execute किया
-        जाता है.
+                        FCFS में, जो भी request पहले आएगी उसे सबसे पहले execute किया जाता है. इसमें सभी requests एक
+                        queue (पंक्ति) में
+                        एक के बाद एक लगी रहती है. सभी requests का एक क्रम होता है और वह अपने क्रमानुसार ही CPU के द्वारा
+                        execute होती
+                        है.
 
 
-        जब इसमें scan पूरा हो जाता है अगर उसके बाद कोई request आती है तो यह उसे तब तक पूरा नहीं करेगा जब तक कि वह वापस
-        नीचे से ऊपर scan करते हुए नहीं आ जाता.
+                        इस अल्गोरिथम का लाभ यह है कि इसे implement करना बहुत आसान होता है.
+                        इस अल्गोरिथम की हानि यह है कि इससे seek time कम नहीं होता है.</li><br>
 
-        SCAN का लाभ यह है कि यह FCFS तथा SSTF की तुलना में उच्च throughput देता है तथा औसत response time कम करता है.
+                    <li>SSTF (shortest seek time first):-<br>
+                        SSTF algorithm में, उस request को सबसे पहले execute किया जाता है जिसका seek time सबसे कम होता है
+                        अर्थात् वह
+                        request जो कि run होने के लिए CPU का सबसे कम समय लेगी उसे सबसे पहले execute किया जायेगा.
 
-        परन्तु इसकी हानि यह है कि इसमें उस request को सबसे ज्यादा इन्तजार करना पड़ता है जिसकी location को डिस्क में अभी
-        अभी (recently) visit किया हो.</li><br>
+                        इसमें सभी requests की जांच की जाती है और उनके seek time के अनुसार उन्हें क्रम में arrange किया
+                        जाता है और जिस
+                        request का seek time सबसे कम होता है उसे सबसे पहले execute कर दिया जाता है.
 
-        <li>C-scan scheduling:-<br>
-        C scan scheduling में सभी requests को circular list के द्वारा arrange किया जाता है. circular list वह लिस्ट होती
-        है जिसमें ना तो starting point होता है और ना ही end point. अर्थात् जो end point होता है वही starting point भी
-        होता है.
+                        SSTF जो है वह FCFS से बेहतर है क्योंकि यह सिस्टम के औसत response time को घटा देता है और सिस्टम
+                        के throughput
+                        (प्रवाह क्षमता) को बढ़ा देता है.
 
-        C scan scheduling जो है वह scan scheduling की तरह ही समान है परन्तु इसमें डिस्क के starting point से requests को
-        execute करते हुए end point तक जाते है और end point पर पहुंचने के बाद वापस starting point पर आ जाते है.</li><br>
-    </ul>
-    </p>
-</article>                              
-</main>
+                        लेकिन इसकी हानि यह है कि कुछ requests को यह पूरा नहीं करता है क्योंकि अगर request का seek time,
+                        आने वाली request
+                        के time से अधिक होता है तो.</li><br>
 
-<nav id="left" class="column">
-    <h3>Topics</h3>
-    <ul>
-        <li><a href="./Disk Scheduling Algorithm (page 13).html">Disk Scheduling Algorithm </a></li>
-        <li><a href="./Transfer time and Bandwidh(page 12).html">Transfer time and Bandwidh</a></li>
-        <li><a href="./Deadlock detection (page 9).html">Deadlock detection</a></li>
-        <li><a href="./what is Hard disk (page 10).html">what is Hard disk</a></li>
-        <li><a href="./rotational delay (page 11).html">rotational delay</a></li>
-        <li><a href="./Banker's Algorithm (page 8).html">Banker's Algorithm</a></li>
-        <li><a href="./Deadlock prevention (page 7).html">Deadlock prevention</a></li>
-        <li><a href="./layered structure approach (page 5).html">layered structure approach</a></li>
-        <li><a href="./what is kernel (page 3).html">what is kernel</a></li>
-        <li><a href="./Deadlock (page 6).html">Deadlock</a></li>
-        <li><a href="./types of kernel (page 4).html">types of kernel</a></li>
-        <li><a href="./types of operating system (page 2).html">types of operating system</a></li>
-        
-        <li><a href="./types of operating system (page 2).html">Real time operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">Batch operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">Distributed operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">Network opertaing system</a></li>
-        <li><a href="./types of operating system (page 2).html">Single tasking & multi tasking operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">Multiprocessing operating system</a></li>
-        <li><a href="./types of operating system (page 2).html">multi-programming operating system</a></li>
-        <li><a href="./what is o.s (page 1).html">what is operating system</a></li>
+                    <li>scan scheduling:-<br>
+                        इस अल्गोरिथम को elevator algorithm भी कहते है.
 
-        
-        <li><a href=""></a></li>
-    </ul>
+                        इस अल्गोरिथम में, डिस्क में सबसे नीचे की तरफ scan करते हुए path में मिलने वाली requests को
+                        execute किया जाता है
+                        और फिर डिस्क के सबसे नीचे end से होते हुए ऊपर की तरफ scan करते हुए path में मिलने वाली requests
+                        को execute किया
+                        जाता है.
 
-</nav>
 
-<div id="right" class="column">
-    <h3>Ads</h3>
-    
-</div>
+                        जब इसमें scan पूरा हो जाता है अगर उसके बाद कोई request आती है तो यह उसे तब तक पूरा नहीं करेगा जब
+                        तक कि वह वापस
+                        नीचे से ऊपर scan करते हुए नहीं आ जाता.
 
-</div>
+                        SCAN का लाभ यह है कि यह FCFS तथा SSTF की तुलना में उच्च throughput देता है तथा औसत response time
+                        कम करता है.
 
-<div id="footer-wrapper">
-<footer id="footer"><p>Footer...</p></footer>
-</div>
+                        परन्तु इसकी हानि यह है कि इसमें उस request को सबसे ज्यादा इन्तजार करना पड़ता है जिसकी location को
+                        डिस्क में अभी
+                        अभी (recently) visit किया हो.</li><br>
 
+                    <li>C-scan scheduling:-<br>
+                        C scan scheduling में सभी requests को circular list के द्वारा arrange किया जाता है. circular
+                        list वह लिस्ट होती
+                        है जिसमें ना तो starting point होता है और ना ही end point. अर्थात् जो end point होता है वही
+                        starting point भी
+                        होता है.
+
+                        C scan scheduling जो है वह scan scheduling की तरह ही समान है परन्तु इसमें डिस्क के starting
+                        point से requests को
+                        execute करते हुए end point तक जाते है और end point पर पहुंचने के बाद वापस starting point पर आ
+                        जाते है.</li><br>
+                </ul>
+                </p>
+            </article>
+        </main>
+
+    </div>
+    <div id="footer-wrapper">
+        <footer>
+            <!-- Footer content -->
+            <p>&copy; 2023 ANANTA GYAAN</p>
+            <p>
+                <a href="./index.html">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Services</a>
+                <a href="mailto:ayushpatel7869595243@gmail.com">Contact</a>
+                <!-- Added "mailto:" to create an email link -->
+            </p>
+        </footer>
+    </div>
 </body>
 
 </html>
