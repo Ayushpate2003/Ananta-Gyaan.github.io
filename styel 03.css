@@ -157,7 +157,7 @@ body {
 }
 
 .achievements .work .work-text {
-  font-size: 1vw; /* Use viewport width for font size */
+  font-size: 3vw; /* Use viewport width for font size */
   color: #000000;
   margin: 2% 0;
   max-width: 70%; /* Use percentages for max-width */
