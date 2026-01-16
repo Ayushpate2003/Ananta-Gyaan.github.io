@@ -1,0 +1,54 @@
+
+name: AISF Security Scan
+on:
+  push:
+    branches: [ "main", "master", "develop" ]
+  pull_request:
+    branches: [ "main", "master", "develop" ]
+  workflow_dispatch:
+
+jobs:
+  security-scan:
+    name: Security Scanners
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Run Trivy Vulnerability Scanner
+        uses: aquasecurity/trivy-action@master
+        continue-on-error: true
+        with:
+          scan-type: 'fs'
+          ignore-unfixed: true
+          format: 'json'
+          output: 'trivy-results.json'
+          severity: 'CRITICAL,HIGH'
+
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+      # Using Semgrep for SAST
+      - name: Semgrep Security Scan
+        uses: returntocorp/semgrep-action@v1
+        continue-on-error: true
+        with:
+          config: p/security-audit
+          generateSarif: true
+          auditOn: push
+
+      # Consolidate Results (Simulated for this step, normally we parse SARIF/JSON)
+      # We upload Trivy JSON for our app to consume
+      - name: Upload Security ARtifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-results
+          path: |
+            trivy-results.json
+            semgrep.sarif
+            gitleaks-report.json
